@@ -1,0 +1,28 @@
+.t-btn-green{
+	color: #fff;
+	background: #78AB4E;
+	border: 2px solid #78AB4E;
+	-webkit-transition: all .6s ease-in;
+    -moz-transition: all .6s ease-in;
+    -o-transition: all .6s ease-in;
+    transition: all .6s ease-in;
+}
+.t-btn-green:hover{
+	color: #78AB4E;
+	background: #eee;
+	border: 2px solid #78AB4E;
+}
+
+.t-btn-default{
+	color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+body {
+  line-height: 1.8;
+  color: #404852;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  outline: none;
+}
