@@ -1,6 +1,6 @@
 <?php 
 if (isset($_SESSION['id_membre']) == '' ) {
-	header('Location:login.php');
+	header('Location:../index.php');
 	die();
 }
 

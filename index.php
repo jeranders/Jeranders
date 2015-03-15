@@ -1,4 +1,5 @@
 <?php include 'bdd.php'; 
+include 'function.php'; 
 
 /*LOGIN START*/
 if (isset($_POST['send'])) {
@@ -29,11 +30,11 @@ if (isset($_POST['send'])) {
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="E-asy Gest vous permez d'avoir une meilleur gestion de votre auto-entreprise">
+  <meta name="author" content="E-asy Gest">
   <link rel="icon" href="../../favicon.ico">
 
-  <title>E-asy Gest</title>
+  <title>E-asy Gest | La gestion de votre auto-entreprise</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Lora:400,700" media="screen" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -73,9 +74,18 @@ if (isset($_POST['send'])) {
               <li><a href="#contact">Contact</a></li> 
               <li><a href="#.wassup">#.wassup</a></li>         
             </ul>
-            <ul class="nav navbar-nav pull-right">                     
-              <li><a href="#" data-toggle="modal" data-target="#myModal">Connexion</a></li>           
-              <li><a href="#">Inscription</a></li>           
+            <ul class="nav navbar-nav pull-right">
+              <?php if (isset($_SESSION['id_membre']) == '') {
+                ?>
+                <li><a href="#" data-toggle="modal" data-target="#myModal">Connexion</a></li>           
+                <li><a href="#">Inscription</a></li> 
+                <?php
+              }else{
+                ?>
+                <li><a href="admin/index.php">Administration</a></li> 
+                <?php
+              } ?>
+
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -89,7 +99,7 @@ if (isset($_POST['send'])) {
           <p><a class="btn t-btn-green btn-lg" href="#" role="button">Learn more &raquo;</a></p>
         </div>
       </div>
-
+      <?php echo flash(); var_dump($_SESSION); ?>
       <!-- Button trigger modal -->
 
       <!-- Modal -->
@@ -129,6 +139,7 @@ if (isset($_POST['send'])) {
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
+
           <div class="col-md-4">
             <h2>Contrôle de votre stock</h2>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>

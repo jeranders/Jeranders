@@ -12,7 +12,7 @@ Premium: http://www.gridgum.com
 /* BASIC THEME CONFIGURATION */
 body {
     color: #797979;
-	background: #f2f2f2;
+    background: #f2f2f2;
     font-family: 'Ruda', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
@@ -29,11 +29,11 @@ a, a:hover, a:focus {
 }
 ::selection {
 
-    background: #68dff0;
+    background: #78AB4E;
     color: #fff;
 }
 ::-moz-selection {
-    background: #68dff0;
+    background: #78AB4E;
     color: #fff;
 }
 
@@ -44,7 +44,7 @@ a, a:hover, a:focus {
 
 /* Bootstrap Modifications */
 .modal-header {
-	background: #68dff0;
+	background: #78AB4E;
 }
 
 .modal-title {
@@ -74,7 +74,7 @@ a, a:hover, a:focus {
 /*Theme Backgrounds*/
 
 .bg-theme {
-	background-color: #68dff0;
+	background-color: #78AB4E;
 }
 
 .bg-theme02 {
@@ -92,7 +92,7 @@ a, a:hover, a:focus {
 
 .btn-theme {
   color: #fff;
-  background-color: #68dff0;
+  background-color: #78AB4E;
   border-color: #48bcb4;
 }
 .btn-theme:hover,
@@ -193,7 +193,7 @@ hr {
 
 .ml {
 	margin-left: 5px;
-	}
+}
 
 .no-padding {
 	padding: 0 !important;
@@ -206,11 +206,11 @@ hr {
 /*Exclusive Theme Colors Configuration*/
 
 .label-theme {
-	background-color: #68dff0;
+	background-color: #78AB4E;
 }
 
 .bg-theme {
-	background-color: #68dff0;
+	background-color: #78AB4E;
 }
 
 ul.top-menu > li > .logout {
@@ -218,11 +218,20 @@ ul.top-menu > li > .logout {
 	font-size: 12px;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
-	border: 1px solid #64c3c2 !important;
+	border: 1px solid #78AB4E !important;
 	padding: 5px 15px;
 	margin-right: 15px;
-	background: #68dff0;
+	background: #78AB4E;
 	margin-top: 15px;
+    webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    font-weight: bold;
 }
 
 
@@ -325,7 +334,7 @@ ul.sidebar-menu li ul.sub li a:hover {
 }
 
 ul.sidebar-menu li ul.sub li.active a {
-    color: #68dff0;
+    color: #78AB4E;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -364,7 +373,7 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #68dff0;
+    background: #78AB4E;
     color: #fff;
     display: block;
 
@@ -413,8 +422,8 @@ ul.sidebar-menu li a.active i {
 }
 
 .black-bg {
-    background: #ffd777;
-    border-bottom: 1px solid #c9aa5f;
+    background: #404852;
+    border-bottom: 1px solid #404852;
 }
 
 .wrapper {
@@ -445,7 +454,7 @@ a.logo:hover, a.logo:focus {
 }
 
 a.logo span {
-    color: #68dff0;
+    color: #78AB4E;
 }
 
 
@@ -511,7 +520,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     .dropdown-menu.extended  {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.176) !important;
     };
-    }
+}
 
 .dropdown-menu.extended li p {
     background-color: #F1F2F7;
@@ -523,7 +532,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .dropdown-menu.extended li p.green {
-    background-color: #68dff0;
+    background-color: #78AB4E;
     color: #fff;
 }
 
@@ -727,9 +736,9 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     border-top-color: #FCB322 !important;
 }
 .notify-arrow-green {
-    border-color: transparent transparent #68dff0;
-    border-bottom-color: #68dff0 !important;
-    border-top-color: #68dff0 !important;
+    border-color: transparent transparent #78AB4E;
+    border-bottom-color: #78AB4E !important;
+    border-top-color: #78AB4E !important;
 }
 
 
@@ -825,7 +834,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .ds a {
-	color: #68dff0;
+	color: #78AB4E;
 }
 
 /* LINE ICONS CONFIGURATION */
@@ -881,7 +890,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .border-head h3 {
     margin-top: 20px;
     margin-bottom: 20px;
-	margin-left: 15px;	
+    margin-left: 15px;	
     padding-bottom: 5px;
     font-weight: normal;
     font-size: 18px;
@@ -921,7 +930,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     position: absolute;
     bottom: 0;
     background: #ff865c;
-    color: #68dff0;
+    color: #78AB4E;
     width: 100%;
     -webkit-border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
@@ -1055,7 +1064,7 @@ PANELS CONFIGURATIONS
 /*Green Panel*/
 .green-panel {
 	text-align: center;
-	background: #68dff0;
+	background: #78AB4E;
 }
 .green-panel .green-header {
 	background: #43b1a9;
@@ -1099,7 +1108,7 @@ PANELS CONFIGURATIONS
 }
 
 .white-panel i {
-	color: #68dff0;
+	color: #78AB4E;
 	padding-right: 4px;
 	font-size: 14px;
 }
@@ -1136,15 +1145,15 @@ PANELS CONFIGURATIONS
 	color: #4fd98b
 }
 .stock .current-price .changes .value {
-      font-size: 1.8em;
-      font-weight: 700; 
+  font-size: 1.8em;
+  font-weight: 700; 
 }
 .stock .summary {
     color: #2f2f2f;
     display: block;
     background: #f2f2f2;
     padding: 10px;
-	text-align: center;
+    text-align: center;
 }
 .stock .summary strong {
 	font-weight: 900;
@@ -1514,7 +1523,7 @@ PANELS CONFIGURATIONS
 	font-weight: 900;
 }
 .profile-01 {
-	background: #68dff0;
+	background: #78AB4E;
 	height: 50px;
 }
 .profile-01:hover {
@@ -1562,7 +1571,7 @@ PANELS CONFIGURATIONS
 	color: #cdcdcd;
 }
 .pr2-social a:hover {
-	color: #68dff0;
+	color: #78AB4E;
 }
 .pr2-social i {
 	margin-top: 15px;
@@ -1618,7 +1627,7 @@ PANELS CONFIGURATIONS
     font-size: 12px;
 }
 .panel.terques-chart .chart-tittle .value a:hover, .panel.terques-chart .chart-tittle .value a.active {
-    color: #68dff0;
+    color: #78AB4E;
     font-size: 12px;
 }
 .panel.terques-chart .chart-tittle {
@@ -1673,7 +1682,7 @@ PANELS CONFIGURATIONS
   display: block;
   position: relative;
   overflow: hidden;
-  background-color: #68dff0;
+  background-color: #78AB4E;
   -webkit-transition: background-color 0.4s;
   -moz-transition: background-color 0.4s;
   -o-transition: background-color 0.4s;
@@ -1693,15 +1702,15 @@ PANELS CONFIGURATIONS
 }
 
 .project:hover .photo-wrapper {
-  background-color: #68dff0;
-	background-image:url(../img/zoom.png);
-	background-repeat:no-repeat;
-	background-position:center;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	position: relative;
+  background-color: #78AB4E;
+  background-image:url(../img/zoom.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: relative;
 }
 .project:hover .photo {
   opacity: 10;
@@ -1729,7 +1738,7 @@ PANELS CONFIGURATIONS
 }
 
 .brand-highlight {
-background: #fffbcc !important;
+    background: #fffbcc !important;
 }
 
 
@@ -1758,9 +1767,9 @@ label {
 }
 
 @media (min-width: 768px) {
-		.form-horizontal .control-label {
-		text-align: left;
-	}
+  .form-horizontal .control-label {
+      text-align: left;
+  }
 }
 
 #focusedInput {
@@ -1936,7 +1945,7 @@ label {
 	margin: 0;
 	padding: 25px 20px;
 	text-align: center;
-	background: #68dff0;
+	background: #78AB4E;
 	border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	color: #fff;
@@ -2102,7 +2111,7 @@ label {
     .panel-footer.revenue-foot {
         margin-bottom: -4px;
     };
-    }
+}
 
 
 .panel-footer.revenue-foot ul  {
@@ -2216,7 +2225,7 @@ label {
 
 /*footer*/
 .site-footer {
-    background: #68dff0;
+    background: #78AB4E;
     color: #fff;
     padding: 10px 0;
 }
