@@ -37,9 +37,9 @@ if (isset($_POST['send'])) {
   <title>E-asy Gest | La gestion de votre auto-entreprise</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Lora:400,700" media="screen" rel="stylesheet">
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
   <!-- Bootstrap theme -->
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
   <!-- E-asy Gest theme -->
   <link href="css/theme.css" rel="stylesheet">
 
@@ -99,7 +99,8 @@ if (isset($_POST['send'])) {
           <p><a class="btn t-btn-green btn-lg" href="#" role="button">Learn more &raquo;</a></p>
         </div>
       </div>
-      <?php echo flash(); var_dump($_SESSION); ?>
+      <div class="row"><div class="col-md-4 col-md-offset-4"><?php echo flash();?></div></div>
+      
       <!-- Button trigger modal -->
 
       <!-- Modal -->
@@ -183,6 +184,12 @@ if (isset($_POST['send'])) {
     <script src="js/jquery.arbitrary-anchor.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+    // Effacement de la div flash
+    setTimeout(function() {
+     document.getElementById('noti').innerHTML = "";
+     },3000);
+    </script>
 
 
   </body>

@@ -4,10 +4,11 @@ function flash(){
 	if (isset($_SESSION['flash'])) {
 		extract($_SESSION['flash']);
 		unset($_SESSION['flash']);
-		return "<div class='alert alert-$type alert-dismissable'>
+		return "<div id='noti'><div class='alert alert-$type alert-dismissable'>
 		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
 		$message
-		</div>";	
+		</div></div>";	
+
 	}
 }
 
