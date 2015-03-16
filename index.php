@@ -38,8 +38,8 @@ if (isset($_POST['send'])) {
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Lora:400,700" media="screen" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.css" rel="stylesheet">
-  <!-- Bootstrap theme -->
-  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <!-- Jeranders theme -->
+  
   <!-- E-asy Gest theme -->
   <link href="css/theme.css" rel="stylesheet">
 
