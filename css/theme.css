@@ -12,23 +12,28 @@
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
+.btn{
+  font-weight: 600;
+}
 .t-btn-green:hover{
 	color: #78AB4E;
 	background: #eee;
 	border: 2px solid #78AB4E;
 }
 
-}
-.t-btn-green:select{
-  color: #78AB4E;
-  background: #eee;
-  border: 2px solid #78AB4E;
+
+.t-btn-green:focus{
+ 
 }
 
 .t-btn-default{
 	color: #333;
   background-color: #fff;
   border-color: #ccc;
+}
+
+a:focus{
+  outline:none !important;
 }
 
 body {
@@ -38,3 +43,184 @@ body {
   background: #fff;
   outline: none;
 }
+
+/* ========================================================================
+ * Message Alert
+ * ======================================================================== */
+ .alert-success{
+  background-color: #82b964;
+  color: #fff;
+  font-weight: 600;
+}
+
+.alert-danger{
+  background-color: #d24d33;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ========================================================================
+ * Formulaire
+ * ======================================================================== */
+ .form-control {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: #555;
+  font-weight: 600;
+  background-color: #fff;
+  border: 2px solid #c0c2c7;
+  border-radius: 3px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -ms-transition: border-color 0.3s;
+  -moz-transition: border-color 0.3s;
+  -webkit-transition: border-color 0.3s;
+}
+.form-control:focus {
+  border-color: #969fa1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-control::-moz-placeholder {
+ color: #999;
+ opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+ color: #999;
+}
+.form-control::-webkit-input-placeholder {
+ color: #999;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #eee;
+  opacity: 1;
+}
+.input-group-addon {
+  background-color: #eee;
+  border: 2px solid #c0c2c7;
+  border-radius: 3px;
+}
+.input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
+  padding: 4px 10px;
+}
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
+  padding: 9px 16px;
+}
+.has-feedback .form-control-feedback {
+  top: 25px;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+}
+.help-block {
+  display: block;
+  font-size: 11px;
+  margin-top: 6px;
+  padding: 0px 1px;
+  margin-bottom: 0;
+  color: #999;
+}
+.has-success .help-block,
+.has-success .control-label,
+.has-success .radio,
+.has-success .checkbox,
+.has-success .radio-inline,
+.has-success .checkbox-inline {
+  color: #82b964;
+}
+.has-success .form-control {
+  border-color: #82b964;
+  background: #cae1bd;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-success .form-control:focus {
+  border-color: #969fa1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-success .input-group-addon {
+  color: #82b964;
+  background-color: #dff0d8;
+  border-color: #82b964;
+}
+.has-success .form-control-feedback {
+  color: #82b964;
+}
+.has-warning .help-block,
+.has-warning .control-label,
+.has-warning .radio,
+.has-warning .checkbox,
+.has-warning .radio-inline,
+.has-warning .checkbox-inline {
+  color: #fcb42e;
+}
+.has-warning .form-control {
+  border-color: #fcb42e;
+  background: #fff4e1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-warning .form-control:focus {
+  border-color: #969fa1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-warning .input-group-addon {
+  color: #fcb42e;
+  background-color: #fcf8e3;
+  border-color: #fcb42e;
+}
+.has-warning .form-control-feedback {
+  color: #fcb42e;
+}
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline {
+  color: #d24d33;
+}
+.has-error .form-control {
+  border-color: #d24d33;
+  background: #f0c6bd;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-error .form-control:focus {
+  border-color: #969fa1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-error .input-group-addon {
+  color: #d24d33;
+  background-color: #f2dede;
+  border-color: #d24d33;
+}
+.has-error .form-control-feedback {
+  color: #d24d33;
+}
+legend {
+  display: block;
+  font-weight: 400;
+  padding: 0 0 10px;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  line-height: inherit;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+

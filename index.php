@@ -37,9 +37,7 @@ if (isset($_POST['send'])) {
   <title>E-asy Gest | La gestion de votre auto-entreprise</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Lora:400,700" media="screen" rel="stylesheet">
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <!-- Jeranders theme -->
-  
+  <link href="css/bootstrap.css" rel="stylesheet">  
   <!-- E-asy Gest theme -->
   <link href="css/theme.css" rel="stylesheet">
 
@@ -166,6 +164,7 @@ if (isset($_POST['send'])) {
           </div>
 
 
+
           <hr>
 
           <footer>
@@ -178,19 +177,15 @@ if (isset($_POST['send'])) {
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ie-emulation-modes-warning.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/jquery.arbitrary-anchor.js"></script>
+    
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <script>
-    // Effacement de la div flash
-    setTimeout(function() {
-     document.getElementById('noti').innerHTML = "";
-     },3000);
-    </script>
-
+    
 
   </body>
   </html>
