@@ -2239,16 +2239,7 @@ a.list-group-item-warning:focus {
 	border-top-right-radius: 3px;
 	box-shadow: 0 0 3px 3px rgba(0,0,0,0.2)
 }
-/*Your copyright*/
 
-.content-wrapper:after {
-	content: "ORB by DazeinCreative \00a9  2014";
-	color: #858689;
-	font-size: 11px;
-	position: absolute;
-	bottom: 10px;
-	right: 15px;
-}
 /*Toggle Screen Classes*/
 
 
@@ -8811,7 +8802,7 @@ opacity: 1;
 	color: #3b8dbd
 }
 .text-green {
-	color: #82b964
+	color: #78AB4E
 }
 .text-green-alt {
 	color: #58b868
