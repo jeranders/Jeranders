@@ -2849,7 +2849,7 @@ object {
 	cursor: auto;
 }
 .main-header {
-	background: #fff;
+	background: #939393; !important
 	position: absolute;
 	width: 100%;
 	right: 0px;
