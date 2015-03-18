@@ -58,7 +58,7 @@
 
 <!--Scripts--> 
 <!--JQuery--> 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>  -->
 <script type="text/javascript" src="js/vendors/jquery/jquery.min.js"></script> 
 <script type="text/javascript" src="js/vendors/jquery/jquery-ui.min.js"></script> 
 

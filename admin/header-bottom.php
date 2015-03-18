@@ -1,4 +1,5 @@
   <link id="main-style" href="css/styles.css" rel="stylesheet" type="text/css">
+  <link id="main-style" href="css/theme.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <script type="text/javascript" src="js/vendors/modernizr/modernizr.custom.js"></script>
 </head>
@@ -122,15 +123,15 @@
                                   <div class="nano">
                                     <div class="nano-content">
                                       <ul class="inbox-dropdown">
-                                        <li><a href="#"> <span class="user-image"><img src="http://placehold.it/150x150" alt="Gluck Dorris" /></span>
+                                        <li><a href="#"> <span class="user-image"><img src="" alt="Gluck Dorris" /></span>
                                           <h4>Why don't u answer calls?</h4>
                                           <p>Listen, dude, time is off. I'll find you soon! Sounds good?...</p>
                                           <span class="label label-default"><i class="entypo-clock"></i> 59 mins ago</span> <span class="delete"><i class="entypo-back"></i></span> </a> </li>
-                                          <li><a href="#"> <span class="user-image"><img src="http://placehold.it/150x150" alt="Gluck Dorris" /></span>
+                                          <li><a href="#"> <span class="user-image"><img src="" alt="Gluck Dorris" /></span>
                                             <h4>Rawrr, rawrrr...</h4>
                                             <p>Listen, dude, time is off. I'll find you soon! Sounds good?...</p>
                                             <span class="label label-default"><i class="entypo-clock"></i> 2 hours ago</span> <span class="delete"><i class="entypo-back"></i></span> </a> </li>
-                                            <li><a href="#"> <span class="user-image"><img src="http://placehold.it/150x150" alt="Gluck Dorris" /></span>
+                                            <li><a href="#"> <span class="user-image"><img src="" alt="Gluck Dorris" /></span>
                                               <h4>Why so serious?</h4>
                                               <p>Listen, dude, time is off. I'll find you soon! Sounds good?...</p>
                                               <span class="label label-default"><i class="entypo-clock"></i> 3 hours ago</span> <span class="delete"><i class="entypo-back"></i></span> </a> </li>
@@ -164,7 +165,7 @@
                                       <!--User Primary Panel-->
                                       <div class="tab-pane active" id="userbar-one">
                                         <div class="main-info">
-                                          <div class="user-img"><img src="http://placehold.it/150x150" alt="User Picture" /></div>
+                                          <div class="user-img"><img src="" alt="User Picture" /></div>
                                           <h1><?php echo info('m_nom_utilisateur'); ?> <small>Administrator</small></h1>
                                         </div>
                                         <div class="list-group"> <a href="#" class="list-group-item"><i class="fa fa-user"></i>Profile</a> <a href="#" class="list-group-item"><i class="fa fa-cog"></i>Settings</a> <a href="#" class="list-group-item"><i class="fa fa-flask"></i>Projects<span class="badge">2</span></a>
@@ -188,25 +189,25 @@
                                                   </div>
                                                 </div>
                                                 <ul>
-                                                  <li><a href="#"><span class="chat-name">Gluck Dorris</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span><span class="badge">5</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-default">Offline</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Mr. Joker</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Chewbacca</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">The Piggy</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-default">Offline</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Gluck Dorris</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span><span class="badge">5</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-default">Offline</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Mr. Joker</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Chewbacca</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">The Piggy</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-default">Offline</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
+                                                  <li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="" alt="User"/></span><span class="label label-success">Online</span></a></li>
                                                 </ul>
                                               </div>
                                             </div>
