@@ -2,6 +2,9 @@
   <link id="main-style" href="css/theme.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <script type="text/javascript" src="js/vendors/modernizr/modernizr.custom.js"></script>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
+
+
 </head>
 
 <body>
@@ -165,7 +168,7 @@
                                       <!--User Primary Panel-->
                                       <div class="tab-pane active" id="userbar-one">
                                         <div class="main-info">
-                                          <div class="user-img"><img src="" alt="User Picture" /></div>
+                                          <div class="user-img"><img src="images/avatar/Gollum.jpg" alt="User Picture" /></div>
                                           <h1><?php echo info('m_nom_utilisateur'); ?> <small>Administrator</small></h1>
                                         </div>
                                         <div class="list-group"> <a href="#" class="list-group-item"><i class="fa fa-user"></i>Profile</a> <a href="#" class="list-group-item"><i class="fa fa-cog"></i>Settings</a> <a href="#" class="list-group-item"><i class="fa fa-flask"></i>Projects<span class="badge">2</span></a>

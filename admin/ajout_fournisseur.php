@@ -2,9 +2,76 @@
 include '../bdd.php';
 include '../function.php';
 
+$h_page = "Ajout d'un fournisseur";
 
 if (isset($_POST['send'])) {
-  # code...
+  $f_nom = ucfirst(securisation($_POST['f_nom']));
+  $f_site = securisation($_POST['f_site']);
+  $f_email = securisation($_POST['f_email']);
+  $f_ref = securisation($_POST['f_ref']);
+  $f_tel = securisation($_POST['f_tel']);
+  $f_fax = securisation($_POST['f_fax']);
+  $f_adresse = securisation($_POST['f_adresse']);
+  $f_code_postal = securisation($_POST['f_code_postal']);
+  $f_ville = securisation($_POST['f_ville']);
+  $f_pays = securisation($_POST['f_pays']);
+  $f_commentaire = htmlentities($_POST['f_commentaire']);
+  $f_active = securisation($_POST['f_active']);
+  $id_membre = $_SESSION['id_membre'];
+
+  if ($f_nom != "") {
+
+
+    if (!filter_var($f_email, FILTER_VALIDATE_EMAIL) === false) {
+
+      $req = $bdd->prepare('SELECT * FROM fournisseurs WHERE f_nom = :f_nom AND id_membre = :id_membre');
+      $req->execute(array('f_nom' => $f_nom, 'id_membre' => $id_membre));
+      $donnees = $req->fetch();
+      if ($req->rowCount() > 0 ) {
+
+        setFlash('Nom du fournisseur déja utilisé.', 'danger');
+
+      }else{
+
+        $fournisseurs = $bdd->prepare('INSERT INTO fournisseurs(f_nom, f_ref, f_email, f_site, f_tel, f_fax, f_commentaire, f_pays, f_adresse, f_code_postal, f_ville, f_date, id_membre, f_active) 
+          VALUES (:f_nom, :f_ref, :f_email, :f_site, :f_tel, :f_fax, :f_commentaire, :f_pays, :f_adresse, :f_code_postal, :f_ville, NOW(), :id_membre, :f_active)');
+        $fournisseurs->execute(array(
+          'f_nom' => $f_nom,
+          'f_ref' => $f_ref,
+          'f_email' => $f_email,
+          'f_site' => $f_site,    
+          'f_tel' => $f_tel,
+          'f_fax' => $f_fax,
+          'f_commentaire' => $f_commentaire,
+          'f_pays' => $f_pays,
+          'f_adresse' => $f_adresse,
+          'f_code_postal' => $f_code_postal,
+          'f_ville' => $f_ville,      
+          'f_active' => $f_active,      
+          'id_membre' => $id_membre
+          ));   
+
+        // HISTORIQUE INSERT DEBUT
+        historique(2, $h_page, 'Ajout du fournisseur ' . $f_nom);
+        // HISTORIQUE INSERT FIN
+
+        setFlash('Vous avez bien ajouté <strong>' . $f_nom . '</strong> comme nouveau fournisseur.');
+        header('Location:ajout_fournisseur.php');
+        die();
+
+      }
+
+
+    }else{
+      setFlash('Attention l\'email est vide ou invalide', 'danger');
+    }
+
+
+
+  }else{
+    setFlash('Attention il n\'y à aucun nom de fournisseur.', 'danger');
+  } 
+
 }
 
 include 'header-top.php'; ?>
@@ -28,9 +95,6 @@ include 'header-top.php'; ?>
 
 <?php echo flash(); ?>
 <?php include 'astuces.php'; ?>
-<?php var_dump($_POST) ?>
-
-
 
 <div class="page-header">
   <h1>Ajout d'un fournisseur<small>Formulaire</small></h1>
@@ -62,6 +126,7 @@ include 'header-top.php'; ?>
               <label class="input">
                 <input type="text" name="f_ref" value="<?php echo value('f_ref'); ?>">
               </label>
+              <div class="note"><strong>Note:</strong> Ex: F5478EF</div>
             </section>
 
             <section>
@@ -74,7 +139,7 @@ include 'header-top.php'; ?>
             <section>
               <label class="label">Contact email</label>
               <label class="input">
-                <input type="mail" name="f_email" value="<?php echo value('f_email'); ?>">
+                <input type="email" name="f_email" value="<?php echo value('f_email'); ?>">
               </label>
             </section>
 
@@ -114,14 +179,29 @@ include 'header-top.php'; ?>
 
             <section>
               <label class="label">Pays</label>
-              <label class="input">
-                <input type="text" name="f_pays" value="<?php echo value('f_pays'); ?>">
+              <label class="select">
+                <select class="select2" name="f_pays" value="<?php echo value('f_pays'); ?>">
+                  <?php
+                  $pays = $bdd->query('SELECT * FROM pays ORDER BY nom_fr_fr ASC');
+                  while ($donnees = $pays->fetch()){
+                    echo '<option value="'.$donnees['alpha2'].'">' .  $donnees['nom_fr_fr'] . '</option>';
+                  } 
+                  $pays->closeCursor();
+                  ?>
+                </select>
               </label>
-            </section>
+            </section>   
+
+            <section>
+              <label class="label">Commentaire</label>
+              <label class="textarea textarea-expandable">
+                <textarea rows="3" name="f_commentaire"><?php echo value('f_commentaire'); ?></textarea>
+              </label>
+            </section>         
 
             <label class="toggle">
-                  <input type="checkbox" name="f_active" checked>
-                  <i></i>Activer
+              <input type="checkbox" name="f_active" value="1" checked >
+              <i></i>Activer
             </label>
 
             <footer>
@@ -151,14 +231,18 @@ include 'header-top.php'; ?>
             </thead>
             <tbody>
               <?php 
-              $fournisseurs = $bdd->prepare('SELECT * FROM membres, fournisseurs WHERE membres.id_membre = fournisseurs.id_membre AND membres.id_membre = :id ORDER BY fournisseurs.f_nom ASC');
+              $fournisseurs = $bdd->prepare('SELECT * FROM membres, fournisseurs WHERE membres.id_membre = fournisseurs.id_membre AND membres.id_membre = :id ORDER BY f_date DESC LIMIT 0, 10');
               $fournisseurs->execute(array('id' => $_SESSION['id_membre']));
               while ($donnees = $fournisseurs->fetch()){
                 echo '<tr>';
                 echo '<td>' .  $donnees['f_nom'] . '</td>';
                 echo '<td>' .  $donnees['f_ref'] . '</td>';
                 echo '<td>' .  $donnees['f_email'] . '</td>';
-                echo '<td><span class="label label-success">Active</span></td>';
+                if ($donnees['f_active'] == 1) {
+                  echo '<td><span class="label label-success">Active</span></td>';
+                }else{
+                  echo '<td><span class="label label-danger">Desactivé</span></td>';
+                }                
                 echo '</tr>';
               } 
               $fournisseurs->closeCursor();
@@ -171,13 +255,6 @@ include 'header-top.php'; ?>
       </div>
     </div>
     <!-- End powerwidget -->
-
-
-
-
-
-
-
 
   </div>
   <!-- /Inner Row Col-md-12 --> 

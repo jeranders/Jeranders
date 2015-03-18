@@ -100,10 +100,9 @@ function type_historique($id) {
 		echo '<span class="label label-danger label-sm"> Suppression </span>';
 	}
 	return $id;
-
 	$type_historique->closeCurser();
-
 }
+
 
 // Fonction insertion historique
 function historique($type, $page, $description){
