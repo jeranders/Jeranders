@@ -29,8 +29,11 @@ include 'header-top.php'; ?>
 <?php include 'astuces.php'; ?>
 
 <div class="page-header">
-  <h1>Ajout d'un fournisseur<small>Formulaire</small></h1>
+  <h1>Ajout d'un fournisseur</h1>
 </div>
+
+
+
 
 <!-- Widget Row Start grid -->
 <div class="row">
@@ -44,7 +47,7 @@ include 'header-top.php'; ?>
         <h2>Ajout fournisseur</h2>
       </header>
       <div class="inner-spacer">
-        <form action="#" method="post" class="orb-form" id="myForm">
+        <form action="#" method="post" class="orb-form" id="myForm" name="r_generate">
           <fieldset>
             <section>
               <label class="label">Nom du fournisseur</label>
@@ -54,14 +57,18 @@ include 'header-top.php'; ?>
               </label>
             </section>
 
+
             <section>
               <label class="label">Reférence</label>
               <label class="input">
                 <label class="input"> <i class="icon-append fa fa-question"></i>
-                <input class="maj" type="text" name="f_ref" id="f_ref" value="<?php echo value('f_ref'); ?>">
+                  <input class="maj" type="text" name="f_ref" id="f_ref" value="<?php echo value('f_ref'); ?>">
                   <b class="tooltip tooltip-top-right">La référence fournisseur doit contenir 10 caractères maximum</b>
-              </label>
-              <div class="note"><strong>Note:</strong> Ex: F5478EF</div>             
+                </label>
+                <div class="note"><strong>Note:</strong> Ex: F5478EF</div> 
+                <input type="button" value="Générer" onClick="generate(this.form.gen_ref.value)">
+                <input type="hidden" name="gen_ref" value="10"> 
+              </label>           
             </section>
 
             <section>

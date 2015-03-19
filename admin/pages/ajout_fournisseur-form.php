@@ -15,7 +15,9 @@ if (isset($_POST['send'])) {
   $id_membre = $_SESSION['id_membre'];
 
   if ($f_nom != "") {
- 
+    if (strlen($f_nom) >= 2) {
+
+     
       $req = $bdd->prepare('SELECT * FROM fournisseurs WHERE f_nom = :f_nom AND id_membre = :id_membre');
       $req->execute(array('f_nom' => $f_nom, 'id_membre' => $id_membre));
       $donnees = $req->fetch();
@@ -53,6 +55,10 @@ if (isset($_POST['send'])) {
 
       }
 
+    }else{
+      setFlash('Attention il y à moins de 2 caractères', 'danger');
+    } 
+
   }else{
     setFlash('Attention il n\'y à aucun nom de fournisseur.', 'danger');
   } 
@@ -60,4 +66,4 @@ if (isset($_POST['send'])) {
 }
 
 
- ?>
+?>
