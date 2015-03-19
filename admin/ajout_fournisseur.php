@@ -57,7 +57,7 @@ include 'header-top.php'; ?>
             <section>
               <label class="label">Reférence</label>
               <label class="input">
-                <input class="maj" type="text" name="f_ref" value="<?php echo value('f_ref'); ?>">
+                <input class="maj" id="f_ref" type="text" name="f_ref" value="<?php echo value('f_ref'); ?>">
               </label>
               <div class="note"><strong>Note:</strong> Ex: F5478EF</div>
             </section>
