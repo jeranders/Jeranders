@@ -145,6 +145,9 @@
     <!--Main App--> 
     <script type="text/javascript" src="js/scripts.js"></script>
 
+    <!--Easy --> 
+    <script type="text/javascript" src="js/easy.js"></script>
+
     <!-- Select2 --> 
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 

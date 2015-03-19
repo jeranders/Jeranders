@@ -41,3 +41,34 @@
   background: #fff;
   border: 2px solid #c0c2c7;
 }
+
+.maj{
+  text-transform: uppercase;
+}
+
+
+
+.correct {
+  border-color: #82b964 !important;
+  background: #cae1bd !important;
+  }
+  
+  .correct:focus {
+  border-color: rgba(68, 191, 68, 0.75);
+  -moz-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+  -webkit-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+  box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+  }
+  
+  .incorrect {
+  border-color: #e9a89a !important;
+  background: #f0c6bd !important;
+  }
+  
+  .incorrect:focus {
+  border-color: rgba(191, 68, 68, 0.75) !important;
+  -moz-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+  -webkit-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+  box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+  }
+

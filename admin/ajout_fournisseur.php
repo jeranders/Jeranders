@@ -4,75 +4,7 @@ include '../function.php';
 
 $h_page = "Ajout d'un fournisseur";
 
-if (isset($_POST['send'])) {
-  $f_nom = ucfirst(securisation($_POST['f_nom']));
-  $f_site = securisation($_POST['f_site']);
-  $f_email = securisation($_POST['f_email']);
-  $f_ref = securisation($_POST['f_ref']);
-  $f_tel = securisation($_POST['f_tel']);
-  $f_fax = securisation($_POST['f_fax']);
-  $f_adresse = securisation($_POST['f_adresse']);
-  $f_code_postal = securisation($_POST['f_code_postal']);
-  $f_ville = securisation($_POST['f_ville']);
-  $f_pays = securisation($_POST['f_pays']);
-  $f_commentaire = htmlentities($_POST['f_commentaire']);
-  $f_active = securisation($_POST['f_active']);
-  $id_membre = $_SESSION['id_membre'];
-
-  if ($f_nom != "") {
-
-
-    if (!filter_var($f_email, FILTER_VALIDATE_EMAIL) === false) {
-
-      $req = $bdd->prepare('SELECT * FROM fournisseurs WHERE f_nom = :f_nom AND id_membre = :id_membre');
-      $req->execute(array('f_nom' => $f_nom, 'id_membre' => $id_membre));
-      $donnees = $req->fetch();
-      if ($req->rowCount() > 0 ) {
-
-        setFlash('Nom du fournisseur déja utilisé.', 'danger');
-
-      }else{
-
-        $fournisseurs = $bdd->prepare('INSERT INTO fournisseurs(f_nom, f_ref, f_email, f_site, f_tel, f_fax, f_commentaire, f_pays, f_adresse, f_code_postal, f_ville, f_date, id_membre, f_active) 
-          VALUES (:f_nom, :f_ref, :f_email, :f_site, :f_tel, :f_fax, :f_commentaire, :f_pays, :f_adresse, :f_code_postal, :f_ville, NOW(), :id_membre, :f_active)');
-        $fournisseurs->execute(array(
-          'f_nom' => $f_nom,
-          'f_ref' => $f_ref,
-          'f_email' => $f_email,
-          'f_site' => $f_site,    
-          'f_tel' => $f_tel,
-          'f_fax' => $f_fax,
-          'f_commentaire' => $f_commentaire,
-          'f_pays' => $f_pays,
-          'f_adresse' => $f_adresse,
-          'f_code_postal' => $f_code_postal,
-          'f_ville' => $f_ville,      
-          'f_active' => $f_active,      
-          'id_membre' => $id_membre
-          ));   
-
-        // HISTORIQUE INSERT DEBUT
-        historique(2, $h_page, 'Ajout du fournisseur ' . $f_nom);
-        // HISTORIQUE INSERT FIN
-
-        setFlash('Vous avez bien ajouté <strong>' . $f_nom . '</strong> comme nouveau fournisseur.');
-        header('Location:ajout_fournisseur.php');
-        die();
-
-      }
-
-
-    }else{
-      setFlash('Attention l\'email est vide ou invalide', 'danger');
-    }
-
-
-
-  }else{
-    setFlash('Attention il n\'y à aucun nom de fournisseur.', 'danger');
-  } 
-
-}
+include 'pages/ajout_fournisseur-form.php';
 
 include 'header-top.php'; ?>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -112,19 +44,20 @@ include 'header-top.php'; ?>
         <h2>Ajout fournisseur</h2>
       </header>
       <div class="inner-spacer">
-        <form action="#" method="post" class="orb-form">
+        <form action="#" method="post" class="orb-form" id="myForm">
           <fieldset>
             <section>
               <label class="label">Nom du fournisseur</label>
-              <label class="input">
-                <input type="text" name="f_nom" value="<?php echo value('f_nom'); ?>">
+              <label class="input"> <i class="icon-append fa fa-question"></i>
+                <input type="text" name="f_nom" id="f_nom" value="<?php echo value('f_nom'); ?>">
+                <b class="tooltip tooltip-top-right">Un nom de fournisseur ne peut pas faire moins de 2 caractères</b>
               </label>
             </section>
 
             <section>
               <label class="label">Reférence</label>
               <label class="input">
-                <input type="text" name="f_ref" value="<?php echo value('f_ref'); ?>">
+                <input class="maj" type="text" name="f_ref" value="<?php echo value('f_ref'); ?>">
               </label>
               <div class="note"><strong>Note:</strong> Ex: F5478EF</div>
             </section>
