@@ -47,6 +47,21 @@
 	}
 	
 	};
+
+	check['f_ref'] = function(id) {
+	
+	var name = document.getElementById(id),
+	tooltipStyle = getTooltip(name).style;
+	
+	if (name.value.length <= 10) {
+	name.className = 'correct';
+	return true;
+	} else {
+	name.className = 'incorrect';
+	return false;
+	}
+	
+	};
 	
 	check['firstName'] = check['lastName']; // La fonction pour le prénom est la même que celle du nom
 	

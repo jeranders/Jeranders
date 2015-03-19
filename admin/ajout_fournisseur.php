@@ -57,9 +57,11 @@ include 'header-top.php'; ?>
             <section>
               <label class="label">Reférence</label>
               <label class="input">
-                <input class="maj" id="f_ref" type="text" name="f_ref" value="<?php echo value('f_ref'); ?>">
+                <label class="input"> <i class="icon-append fa fa-question"></i>
+                <input class="maj" type="text" name="f_ref" id="f_ref" value="<?php echo value('f_ref'); ?>">
+                  <b class="tooltip tooltip-top-right">La référence fournisseur doit contenir 10 caractères maximum</b>
               </label>
-              <div class="note"><strong>Note:</strong> Ex: F5478EF</div>
+              <div class="note"><strong>Note:</strong> Ex: F5478EF</div>             
             </section>
 
             <section>
