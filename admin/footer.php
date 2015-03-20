@@ -63,6 +63,12 @@
 <script type="text/javascript" src="js/vendors/jquery/jquery.min.js"></script> 
 <script type="text/javascript" src="js/vendors/jquery/jquery-ui.min.js"></script> 
 
+<!--Datatables--> 
+<script type="text/javascript" src="js/vendors/datatables/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="js/vendors/datatables/jquery.dataTables-bootstrap.js"></script> 
+<script type="text/javascript" src="js/vendors/datatables/dataTables.colVis.js"></script> 
+<script type="text/javascript" src="js/vendors/datatables/colvis.extras.js"></script> 
+
 <!--EasyPieChart--> 
 <script type="text/javascript" src="js/vendors/easing/jquery.easing.1.3.min.js"></script> 
 <script type="text/javascript" src="js/vendors/easypie/jquery.easypiechart.min.js"></script> 

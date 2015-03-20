@@ -86,7 +86,7 @@
                     <!--Notifications Dropdown-->
 
                     <div class="btn-group">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <i class="entypo-archive"></i></button>
+                      <button type="button" class="btn btn-default dropdown-toggle tooltiped" data-toggle="dropdown" data-placement="bottom" title="Historiques"> <i class="entypo-archive"></i></button>
                       <div id="notification-dropdown" class="dropdown-menu">
                         <div class="dropdown-header">Historiques</div>
                         <div class="dropdown-container">
@@ -98,17 +98,22 @@
                                 while ($donnees = $n_historique->fetch()){
                                   if ($donnees['h_type'] == 1) {
                                     echo '<li class="bg-danger"><a href="#"> <span class="notification-icon"><i class="fa fa-trash-o"></i></span>
-                                    <h4>Ajout</h4>
+                                    
                                     <p>' . $donnees['h_description'] . '</p>
                                     <span class="label label-default"><i class="entypo-clock"></i> ' . getRelativeTime($donnees['h_date']) . '</span> </a> </li>';
                                   }elseif ($donnees['h_type'] == 2) {
                                     echo '<li class="bg-info"><a href="#"> <span class="notification-icon"><i class="fa fa-check-circle"></i></span>
-                                    <h4>Ajout</h4>
+                                    
                                     <p>' . $donnees['h_description'] . '</p>
                                     <span class="label label-default"><i class="entypo-clock"></i> ' . getRelativeTime($donnees['h_date']) . '</span> </a> </li>';
                                   }elseif ($donnees['h_type'] == 3) {
                                     echo '<li class="bg-success"><a href="#"> <span class="notification-icon"><i class="fa fa-pencil"></i></span>
-                                    <h4>Ajout</h4>
+                                    
+                                    <p>' . $donnees['h_description'] . '</p>
+                                    <span class="label label-default"><i class="entypo-clock"></i> ' . getRelativeTime($donnees['h_date']) . '</span> </a> </li>';
+                                  }elseif ($donnees['h_type'] == 4) {
+                                    echo '<li class="bg-warning"><a href="#"> <span class="notification-icon"><i class="fa fa-pencil"></i></span>
+                                    
                                     <p>' . $donnees['h_description'] . '</p>
                                     <span class="label label-default"><i class="entypo-clock"></i> ' . getRelativeTime($donnees['h_date']) . '</span> </a> </li>';
                                   }
@@ -261,7 +266,7 @@
                                 <li><a class="submenu" href="#" title="Dashboard" data-id="dash-sub"><i class="entypo-briefcase"></i><span> Fournisseurs</span></a>
                                   <ul id="dash-sub">
                                     <li><a href="ajout_fournisseur.php" ><i class="fa fa-cubes"></i><span> Ajouter un fournisseur </span></a></li>
-                                    <li><a href="index-2.html"><i class="fa fa-cubes"></i><span> Voir les fournisseurs </span></a></li>
+                                    <li><a href="liste_fournisseur.php"><i class="fa fa-cubes"></i><span> Voir les fournisseurs </span></a></li>
                                   </ul>
                                 </li>
 
