@@ -57,49 +57,79 @@ include 'header-top.php'; ?>
           <tbody>
 
             <?php 
-              $fournisseurs = $bdd->prepare('SELECT * FROM membres, fournisseurs WHERE membres.id_membre = fournisseurs.id_membre AND membres.id_membre = :id ORDER BY f_date DESC LIMIT 0, 10');
-              $fournisseurs->execute(array('id' => $_SESSION['id_membre']));
-              while ($donnees = $fournisseurs->fetch()){
-                echo '<tr>';
-                echo '<td>' .  $donnees['f_nom'] . '</td>';
-                echo '<td>' .  $donnees['f_ref'] . '</td>';
-                echo '<td>' .  $donnees['f_email'] . '</td>';
-                echo '<td>' .  $donnees['f_tel'] . '</td>';                
+            $fournisseurs = $bdd->prepare('SELECT * FROM membres, fournisseurs WHERE membres.id_membre = fournisseurs.id_membre AND membres.id_membre = :id ORDER BY f_date DESC LIMIT 0, 10');
+            $fournisseurs->execute(array('id' => $_SESSION['id_membre']));
+            while ($donnees = $fournisseurs->fetch()){
+              ?>
+              <tr>
+                <td><?php echo $donnees['f_nom']; ?> </td>
+                <td><?php echo $donnees['f_ref']; ?> </td>
+                <td><?php echo $donnees['f_email']; ?> </td>
+                <td><?php echo $donnees['f_tel']; ?> </td>
+                <?php          
                 if ($donnees['f_active'] == 1) {
-                  echo '<td><span class="label label-success">Active</span></td>';
+                  ?>
+                  <td><span class="label label-success">Active</span></td>
+                  <?php
                 }else{
-                  echo '<td><span class="label label-danger">Desactivé</span></td>';
+                  ?>
+                  <td><span class="label label-danger">Desactivé</span></td>
+                  <?php
                 }
                 ?>
                 <td> 
                   <a href="fournisseurs.php?modif=<?php echo $donnees['id_fournisseur']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>  
                   <a  class="btn btn-danger"><i class="fa fa-trash-o"></i></a> 
+
+
+
+
+
+
+
+
+<?php          
+                if ($donnees['f_active'] == 1) {
+                  ?>
                   <a href="liste_fournisseur.php?desactive=<?php echo $donnees['id_fournisseur']?>&<?php echo csrf(); ?>" class="btn btn-warning"><i class="fa fa-power-off"></i></a>
+                  <?php
+                }else{
+                  ?>
+                  <a href="liste_fournisseur.php?desactive=<?php echo $donnees['id_fournisseur']?>&<?php echo csrf(); ?>" class="btn btn-success"><i class="fa fa-power-off"></i></a>
+                  <?php
+                }
+                ?>
+
+
+
+
+
+
                 </td>
                 <?php
                 echo '</tr>';
               } 
               $fournisseurs->closeCursor();
               ?>
-          </tbody>
-          <tfoot>
-            <tr>
-              <th><input type="text" name="filter_game_name" placeholder="Filtrer par nom" class="search_init" /></th>
-              <th><input type="text" name="filter_publisher" placeholder="Filtrer par Référence" class="search_init" /></th>
-              <th><input type="text" name="filter_platform" placeholder="Filtrer par email" class="search_init" /></th>
-              <th><input type="text" name="filter_genre" placeholder="Filtrer par télphone" class="search_init" /></th>
-              
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
-    <!-- End .powerwidget --> 
+            </tbody>
+            <tfoot>
+              <tr>
+                <th><input type="text" name="filter_game_name" placeholder="Filtrer par nom" class="search_init" /></th>
+                <th><input type="text" name="filter_publisher" placeholder="Filtrer par Référence" class="search_init" /></th>
+                <th><input type="text" name="filter_platform" placeholder="Filtrer par email" class="search_init" /></th>
+                <th><input type="text" name="filter_genre" placeholder="Filtrer par télphone" class="search_init" /></th>
 
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <!-- End .powerwidget --> 
+
+    </div>
+    <!-- /Inner Row Col-md-12 --> 
   </div>
-  <!-- /Inner Row Col-md-12 --> 
-</div>
-<!-- /Widgets Row End Grid--> 
+  <!-- /Widgets Row End Grid--> 
 </div>
 <!-- / Content Wrapper --> 
 
