@@ -5,6 +5,7 @@ include '../function.php';
 $h_page = 'Liste fournisseurs';
 
 include 'pages/desactive_fournisseur.php';
+include 'pages/active_fournisseur.php';
 
 include 'header-top.php'; ?>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -95,7 +96,7 @@ include 'header-top.php'; ?>
                   <?php
                 }else{
                   ?>
-                  <a href="liste_fournisseur.php?desactive=<?php echo $donnees['id_fournisseur']?>&<?php echo csrf(); ?>" class="btn btn-success"><i class="fa fa-power-off"></i></a>
+                  <a href="liste_fournisseur.php?active=<?php echo $donnees['id_fournisseur']?>&<?php echo csrf(); ?>" class="btn btn-success"><i class="fa fa-power-off"></i></a>
                   <?php
                 }
                 ?>
