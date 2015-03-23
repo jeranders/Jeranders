@@ -48,6 +48,38 @@
 		
 	};
 
+	check['c_nom'] = function(id) {
+		
+		var name = document.getElementById(id),
+		tooltipStyle = getTooltip(name).style;
+		
+		if (name.value.length >= 2) {
+			name.className = 'correct';
+			return true;
+		} else {
+			name.className = 'incorrect';
+			return false;
+		}
+		
+	};
+
+
+	check['c_ref'] = function(id) {
+		
+		var name = document.getElementById(id),
+		tooltipStyle = getTooltip(name).style;
+		
+		if (name.value.length <= 5) {
+			name.className = 'correct';
+			return true;
+		} else {
+			name.className = 'incorrect';
+			return false;
+		}
+		
+	};
+
+
 	check['f_ref'] = function(id) {
 		
 		var name = document.getElementById(id),
@@ -63,7 +95,7 @@
 		
 	};
 	
-	check['firstName'] = check['lastName']; // La fonction pour le prénom est la même que celle du nom
+	// check['firstName'] = check['lastName']; // La fonction pour le prénom est la même que celle du nom
 	
 	check['age'] = function() {
 		
@@ -211,4 +243,8 @@
 
  function generate(enterlength){
  	document.r_generate.f_ref.value=generation_ref(enterlength)
+ }
+
+function generate(enterlength){
+ 	document.r_generate.c_ref.value=generation_ref(enterlength)
  }

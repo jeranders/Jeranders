@@ -12,7 +12,7 @@ include 'header-top.php'; ?>
 <meta name="author" content="E-asy Gest">
 <meta name="description" content="Gestion pour auto-entrepreneur">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>E-asy Gest</title>
+<title>Ajout d'un fournisseur</title>
 <?php include 'header-bottom.php'; ?>
 
 <!--Breadcrumb-->

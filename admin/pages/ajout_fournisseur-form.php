@@ -3,7 +3,7 @@ if (isset($_POST['send'])) {
   $f_nom = ucfirst(securisation($_POST['f_nom']));
   $f_site = securisation($_POST['f_site']);
   $f_email = securisation($_POST['f_email']);
-  $f_ref = securisation($_POST['f_ref']);
+  $f_ref = strtoupper(securisation($_POST['f_ref']));
   $f_tel = securisation($_POST['f_tel']);
   $f_fax = securisation($_POST['f_fax']);
   $f_adresse = securisation($_POST['f_adresse']);
