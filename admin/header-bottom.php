@@ -27,6 +27,9 @@
       <div class="navbar-content"> 
 
         <!--Sidebar Toggler--> 
+        <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Montant du compte">Compte : <?php echo info('c_resultat_banque'); ?> €</i></a> 
+        <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Chiffre d'affaire du mois">CA : 1258,25 €</i></a> 
+        <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Dépenses du mois">Dépenses: 708 €</i></a> 
         <a href="#" class="btn btn-default left-toggler"><i class="fa fa-bars"></i></a> 
         <!--Right Userbar Toggler--> 
         <a href="#" class="btn btn-user right-toggler pull-right"><i class="entypo-vcard"></i> <span class="logged-as hidden-xs">Logged as</span><span class="logged-as-name hidden-xs">Anton Durant</span></a> 
@@ -35,25 +38,36 @@
         
         <!--Settings Dropdown-->
         <div class="btn-group pull-right">
-          <button type="button" class="btn btn-default dropdown-toggle tooltiped" data-placement="bottom" title="Settings" data-toggle="dropdown"> <i class="entypo-cog"></i></button>
+          <button type="button" class="btn btn-default dropdown-toggle tooltiped" data-placement="bottom" title="Configurations" data-toggle="dropdown"> <i class="entypo-cog"></i></button>
+
+          <?php if (isset($_POST['configuration'])) {
+            echo "Formulaire Check";
+          }else{
+            echo "Formulaire Error";
+          } ?>
+
           <div id="settings-dropdown" class="dropdown-menu keep_open orb-form">
-            <div class="dropdown-header">Settings </div>
-            <div class="dropdown-container">
-              <div class="nano">
-                <div class="nano-content">
-                  <ul class="settings-dropdown">
-                    <li>
-                      <label class="toggle">
-                        <input type="checkbox" name="checkbox-toggle" checked>
-                        <i></i>Astuces</label>
-                      </li>
-                    </ul>
+
+            <div class="dropdown-header">Configurations </div>
+            <form action="" method="post" class="orb-form">  
+              <div class="dropdown-container">
+                <div class="nano">
+                  <div class="nano-content">
+                    <ul class="settings-dropdown">
+                      <li>
+                        <label class="toggle">
+                          <input type="checkbox" name="astuce" checked>
+                          <i></i>Astuces</label>                          
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="dropdown-footer"> <a class="btn btn-dark" href="#">Enregistrer</a> </div>
+                </div>               
+                <input type="submit" name="configuration" class="btn t-btn-green" value="Envoyer">
+              </form>
             </div>
           </div>
+          <?php var_dump($_POST); ?>
 
           <!--Lock Screen--> 
           <a href="../logout.php" class="btn btn-default hidden-xs pull-right tooltiped" data-toggle="tooltip" data-placement="bottom" title="Déconnexion"> <i class="entypo-lock"></i> </a> 
@@ -152,7 +166,7 @@
                     <div class="tab-pane active" id="userbar-one">
                       <div class="main-info">
                         <div class="user-img"><img src="images/avatar/Gollum.jpg" alt="User Picture" /></div>
-                        <h1><?php echo info('m_nom_utilisateur'); ?> <small>Administrator</small></h1>
+                        <h1><?php echo info('c_nom_societe'); ?> <small>Administrator</small></h1>
                       </div>
                       <div class="list-group"> <a href="#" class="list-group-item"><i class="fa fa-user"></i>Profile</a> <a href="#" class="list-group-item"><i class="fa fa-cog"></i>Settings</a> <a href="#" class="list-group-item"><i class="fa fa-flask"></i>Projects<span class="badge">2</span></a>
                         <div class="empthy"></div>

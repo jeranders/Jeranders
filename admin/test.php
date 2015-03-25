@@ -1,12 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="keywords" content="admin template, admin dashboard, inbox templte, calendar template, form validation">
-<meta name="author" content="DazeinCreative">
-<meta name="description" content="ORB - Powerfull and Massive Admin Dashboard Template with tonns of useful features">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ORB</title>
+
+<title>test</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 <script type="text/javascript" src="js/vendors/modernizr/modernizr.custom.js"></script>
@@ -17,7 +14,7 @@
 <!--Smooth Scroll-->
 <div class="smooth-overflow"> 
   <!--Navigation-->
-  <nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="index.html"><span class="text-blue">ORB</span></a> 
+  <nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="index.html"><span class="text-blue">Test</span></a> 
     
     <!--Search-->
     <div class="site-search">
@@ -42,7 +39,11 @@
         <div class="btn-group pull-right">
           <button type="button" class="btn btn-default dropdown-toggle tooltiped" data-placement="bottom" title="Configurations" data-toggle="dropdown"> <i class="entypo-cog"></i></button>
 
-          
+          <?php if (isset($_POST["configuration"])) {
+            echo "Formulaire Check";
+          }else{
+            echo "Formulaire Error";
+          } ?>
 
           <div id="settings-dropdown" class="dropdown-menu keep_open orb-form">
             <form action="" method="post" class="orb-form">  
@@ -232,7 +233,7 @@
     
     <!--Main Menu-->
     <div class="responsive-admin-menu">
-      <div class="responsive-menu">ORB
+      <div class="responsive-menu">Test
         <div class="menuicon"><i class="fa fa-angle-down"></i></div>
       </div>
       <ul id="menu">
@@ -384,16 +385,7 @@
       </div>
       <!--/Breadcrumb--> 
       
-      <!--Jumbotron-->
-      <div class="jumbotron jumbotron6">
-        <h1>Welcome 2 <strong>ORB</strong></h1>
-        <p class="lead">ORB &#8212; fully responsive admin template powered by BootStrap 3 Framework. 
-          ORB is packed with tons of accurately styled and predefined components, plugins and features that can be used in 
-          creation of admin dashboards, CRM and CMS panels. </p>
-        <small>ORB has own premium and unique features, such as powerfull <a href="admin-widgets.html">ORB Widgets</a>, <a href="admin-portlets.html">Portlets Gallery</a>, <a href="admin-inbox.html">Prototyped Inbox</a>, <a href="admin-forms-validation.html">Form Validation and AJAX Processing</a>, <a href="admin-animation.html">revised Bootstrap Modal and Popover</a> classes and much more. ORB is also bundled with 6 predefined styles.</small>
-        <p><a href="http://themeforest.net/item/orb-powerful-admin-dashboard/7758614" class="btn margin-top btn-danger"><i class="fa fa-shopping-cart"></i> Buy on Themeforest</a></p>
-      </div>
-      <!--/Jumbotron--> 
+     
       
       <!-- Widget Row Start grid -->
       <div class="row" id="powerwidgets">
