@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 24 Mars 2015 à 10:25
+-- Généré le :  Jeu 26 Mars 2015 à 10:32
 -- Version du serveur :  5.6.21
 -- Version de PHP :  5.6.3
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `id_membre` int(11) NOT NULL,
   `c_active` int(11) NOT NULL,
   `c_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `categories`
@@ -66,7 +66,9 @@ CREATE TABLE IF NOT EXISTS `categories` (
 
 INSERT INTO `categories` (`id_categorie`, `c_nom`, `c_description`, `c_ref`, `id_membre`, `c_active`, `c_date`) VALUES
 (1, 'Cabochon', '', 'XXAMF', 1, 1, '2015-03-23 12:58:27'),
-(2, 'Cabochon', '', '', 2, 1, '2015-03-23 14:55:47');
+(2, 'Cabochon', '', '', 2, 1, '2015-03-23 14:55:47'),
+(3, 'Bagues', '', 'W4CD9', 2, 1, '2015-03-26 00:24:19'),
+(4, 'Accroche-Sac', '', 'Y4YRQ', 2, 0, '2015-03-26 00:24:35');
 
 -- --------------------------------------------------------
 
@@ -117,9 +119,29 @@ CREATE TABLE IF NOT EXISTS `configurations` (
 --
 
 INSERT INTO `configurations` (`id_config`, `id_membre`, `c_nom_societe`, `c_description`, `c_siret`, `c_date_activite`, `c_type_activite`, `c_ca_t`, `c_organisme`, `c_plafond`, `c_cotisation`, `c_impot`, `c_budget_depart`, `c_resultat_banque`, `c_tel`, `c_accre`, `c_adresse`, `c_logo`, `c_avatar`, `c_site`, `c_pseudo`, `c_email_societe`, `c_email_perso`, `c_nom`, `c_prenom`, `c_phrase_secret`, `c_phrase_verif`, `c_password`, `c_valide`, `c_taux_paypal`, `c_montant_paypal`, `c_taux_payplug`, `c_montant_payplug`, `c_check_paypal`, `c_check_payplug`) VALUES
-(1, 1, 'Little Owl', 'Description de votre société', '000 000 000 00', '2015-01-01', '', 82200.00, '', 0, 0.00, 0.00, 1.00, 1.00, '2164261', 0, '13 Rue du Général Beuret Paris, France', '', '', 'http://monsite.fr', '', 'contact@monsite.fr', '', 'Dupont', 'Jean', '', '', '', 0, 0.00, 0.00, 0.00, 0.00, 0, 0),
+(1, 1, 'Little Owl', 'Description de votre société', '000 000 000 00', '2015-01-01', '', 82200.00, '', 0, 0.00, 0.00, 1.00, 86.00, '2164261', 0, '13 Rue du Général Beuret Paris, France', '', '', 'http://monsite.fr', '', 'contact@monsite.fr', '', 'Dupont', 'Jean', '', '', '', 0, 0.00, 0.00, 0.00, 0.00, 0, 0),
 (2, 2, 'Moltes', 'Description de votre société', '000 000 000 00', '2015-01-01', '', 82200.00, '', 0, 0.00, 0.00, 1.00, 1.00, '2164261', 0, '13 Rue du Général Beuret Paris, France', '', '', 'http://monsite.fr', '', 'contact@monsite.fr', '', 'Dupont', 'Jean', '', '', '', 0, 0.00, 0.00, 0.00, 0.00, 0, 0),
 (3, 3, 'AnCat Corp', 'Description de votre société', '000 000 000 00', '2015-01-01', '', 82200.00, '', 0, 0.00, 0.00, 1.00, 1.00, '2164261', 0, '13 Rue du Général Beuret Paris, France', '', '', 'http://monsite.fr', '', 'contact@monsite.fr', '', 'Dupont', 'Jean', '', '', '', 0, 0.00, 0.00, 0.00, 0.00, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `config_activite`
+--
+
+CREATE TABLE IF NOT EXISTS `config_activite` (
+`id_config_activite` int(11) NOT NULL,
+  `ca_nom_activite` varchar(255) NOT NULL,
+  `ca_plafond` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `config_activite`
+--
+
+INSERT INTO `config_activite` (`id_config_activite`, `ca_nom_activite`, `ca_plafond`) VALUES
+(1, 'Ventes de marchandises', 82200),
+(2, 'Prestations de services commerciales ou artisanales', 32900);
 
 -- --------------------------------------------------------
 
@@ -169,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `historiques` (
   `h_description` text NOT NULL,
   `h_ip` varchar(255) NOT NULL,
   `h_id_membre` int(10) unsigned NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf32;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf32;
 
 --
 -- Contenu de la table `historiques`
@@ -228,7 +250,9 @@ INSERT INTO `historiques` (`id_h`, `h_page`, `h_date`, `h_type`, `h_description`
 (50, 'Ajout d''une catégorie', '2015-03-23 14:55:47', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 2),
 (51, 'Liste fournisseurs', '2015-03-23 15:25:03', '4', 'Désactivation de la categorie Cabochon', '127.0.0.1', 1),
 (52, 'Liste fournisseurs', '2015-03-23 15:25:07', '4', 'Activation de la catégorie Cabochon', '127.0.0.1', 1),
-(53, 'Liste fournisseurs', '2015-03-23 15:27:04', '4', 'Désactivation du fournisseur Alex', '127.0.0.1', 1);
+(53, 'Liste fournisseurs', '2015-03-23 15:27:04', '4', 'Désactivation du fournisseur Alex', '127.0.0.1', 1),
+(54, 'Ajout d''une catégorie', '2015-03-26 00:24:19', '2', 'Ajout de la catégorie Bagues', '127.0.0.1', 2),
+(55, 'Ajout d''une catégorie', '2015-03-26 00:24:35', '2', 'Ajout de la catégorie Accroche-Sac', '127.0.0.1', 2);
 
 -- --------------------------------------------------------
 
@@ -247,17 +271,21 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `m_date_inscription` datetime NOT NULL,
   `m_rang` int(11) NOT NULL DEFAULT '2',
   `m_valide` tinyint(1) NOT NULL,
-  `m_key` varchar(255) NOT NULL
+  `id_config_active` int(11) NOT NULL,
+  `capital_depart` float(11,2) NOT NULL,
+  `compte` float(11,2) NOT NULL,
+  `m_key` varchar(255) NOT NULL,
+  `astuce` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `membres`
 --
 
-INSERT INTO `membres` (`id_membre`, `m_nom_utilisateur`, `m_nom`, `m_prenom`, `m_password`, `m_email_pro`, `m_email_perso`, `m_date_inscription`, `m_rang`, `m_valide`, `m_key`) VALUES
-(1, 'Jeranders', '', '', '8b317bd482b09ba8e7280c9c5cce83e7cd6066da', '', 'brechoire.j@gmail.com', '2015-02-19 10:52:15', 2, 1, '260219422188f771c39cc4ffeb08e28cc856a758189153db6587c94fd04e96d92a69a656f5e8d90e862e6Jeranders49097274e03bcb97f5ce55f3cab9d844f59261a808f71fdb'),
-(2, 'Moltes', '', '', '8b317bd482b09ba8e7280c9c5cce83e7cd6066da', '', 'moltes@moltes.fr', '2015-02-27 17:00:04', 2, 1, '0990cd204056cac826b501958a42bddbd908192a621823db6587c94fd04e96d92a69a656f5e8d90e862e6Moltes42588755e03bcb97f5ce55f3cab9d844f59261a808f71fdb'),
-(3, 'AnCat', '', '', '8b317bd482b09ba8e7280c9c5cce83e7cd6066da', '', 'ancat@ancat.fr', '2015-02-27 17:02:40', 2, 1, '81e3864e7b4b6d7f0e60495d9c81d3e100b5df71429443db6587c94fd04e96d92a69a656f5e8d90e862e6AnCat16967494e03bcb97f5ce55f3cab9d844f59261a808f71fdb');
+INSERT INTO `membres` (`id_membre`, `m_nom_utilisateur`, `m_nom`, `m_prenom`, `m_password`, `m_email_pro`, `m_email_perso`, `m_date_inscription`, `m_rang`, `m_valide`, `id_config_active`, `capital_depart`, `compte`, `m_key`, `astuce`) VALUES
+(1, 'Jeranders', '', '', '8b317bd482b09ba8e7280c9c5cce83e7cd6066da', '', 'brechoire.j@gmail.com', '2015-02-19 10:52:15', 2, 1, 1, 700.00, 85.43, '260219422188f771c39cc4ffeb08e28cc856a758189153db6587c94fd04e96d92a69a656f5e8d90e862e6Jeranders49097274e03bcb97f5ce55f3cab9d844f59261a808f71fdb', 1),
+(2, 'Moltes', '', '', '8b317bd482b09ba8e7280c9c5cce83e7cd6066da', '', 'moltes@moltes.fr', '2015-02-27 17:00:04', 2, 1, 2, 65000.00, 24632.00, '0990cd204056cac826b501958a42bddbd908192a621823db6587c94fd04e96d92a69a656f5e8d90e862e6Moltes42588755e03bcb97f5ce55f3cab9d844f59261a808f71fdb', 0),
+(3, 'AnCat', '', '', '8b317bd482b09ba8e7280c9c5cce83e7cd6066da', '', 'ancat@ancat.fr', '2015-02-27 17:02:40', 2, 1, 1, 35000.00, 18455.98, '81e3864e7b4b6d7f0e60495d9c81d3e100b5df71429443db6587c94fd04e96d92a69a656f5e8d90e862e6AnCat16967494e03bcb97f5ce55f3cab9d844f59261a808f71fdb', 0);
 
 -- --------------------------------------------------------
 
@@ -571,6 +599,12 @@ ALTER TABLE `configurations`
  ADD PRIMARY KEY (`id_config`);
 
 --
+-- Index pour la table `config_activite`
+--
+ALTER TABLE `config_activite`
+ ADD PRIMARY KEY (`id_config_activite`);
+
+--
 -- Index pour la table `fournisseurs`
 --
 ALTER TABLE `fournisseurs`
@@ -613,12 +647,17 @@ MODIFY `id_achat` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
-MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `configurations`
 --
 ALTER TABLE `configurations`
 MODIFY `id_config` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pour la table `config_activite`
+--
+ALTER TABLE `config_activite`
+MODIFY `id_config_activite` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `fournisseurs`
 --
@@ -628,7 +667,7 @@ MODIFY `id_fournisseur` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pour la table `historiques`
 --
 ALTER TABLE `historiques`
-MODIFY `id_h` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
+MODIFY `id_h` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT pour la table `membres`
 --

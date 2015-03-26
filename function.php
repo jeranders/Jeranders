@@ -51,7 +51,7 @@ function info($id){
 function info_active($id){
 	
 	global $bdd;
-	$ca = $bdd->prepare('SELECT * FROM membres, config_activite WHERE membres.id_membre = config_activite.id_membre AND membres.id_membre = :id');
+	$ca = $bdd->prepare('SELECT * FROM membres, config_activite WHERE membres.id_membre = :id');
 	$ca->execute(array('id' => $_SESSION['id_membre']));
 	$donnees = $ca->fetch(); 
 	$ca->closeCursor();

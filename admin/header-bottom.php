@@ -27,7 +27,7 @@
       <div class="navbar-content"> 
 
         <!--Sidebar Toggler--> 
-        <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Montant du compte">Compte : <?php echo info('c_resultat_banque'); ?> €</i></a> 
+        <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Montant du compte">Compte : <?php echo info_active('compte'); ?> €</i></a> 
         <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Chiffre d'affaire du mois">CA : 1258,25 €</i></a> 
         <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Dépenses du mois">Dépenses: 708 €</i></a> 
         <a href="#" class="btn btn-default left-toggler"><i class="fa fa-bars"></i></a> 
@@ -41,9 +41,7 @@
           <button type="button" class="btn btn-default dropdown-toggle tooltiped" data-placement="bottom" title="Configurations" data-toggle="dropdown"> <i class="entypo-cog"></i></button>
 
           <?php if (isset($_POST['configuration'])) {
-            echo "Formulaire Check";
-          }else{
-            echo "Formulaire Error";
+            #Code si formulaire fonctionne
           } ?>
 
           <div id="settings-dropdown" class="dropdown-menu keep_open orb-form">
@@ -63,11 +61,10 @@
                     </div>
                   </div>
                 </div>               
-                <input type="submit" name="configuration" class="btn t-btn-green" value="Envoyer">
+                <input type="submit" name="configuration" class="btn btn-success pull-right" value="Envoyer">
               </form>
             </div>
           </div>
-          <?php var_dump($_POST); ?>
 
           <!--Lock Screen--> 
           <a href="../logout.php" class="btn btn-default hidden-xs pull-right tooltiped" data-toggle="tooltip" data-placement="bottom" title="Déconnexion"> <i class="entypo-lock"></i> </a> 

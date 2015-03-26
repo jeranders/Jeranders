@@ -11,9 +11,7 @@
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.btn{
-  font-weight: 600;
-}
+
 .t-btn-green:hover{
 	color: #78AB4E;
 	background: #eee;
