@@ -60,10 +60,15 @@ include 'header-top.php'; ?>
 
             <section>
               <label class="label">Reférence</label>
-              <label class="input"> <i class="icon-append fa fa-question"></i>
-                <input type="text" name="f_ref" id="f_ref" value="<?php echo value('f_ref'); ?>">
-                <b class="tooltip tooltip-top-right">La référence d'un fournisseur doit contenir 10 caractères maximum</b>
-              </label>
+              <label class="input">
+                <label class="input"> <i class="icon-append fa fa-question"></i>
+                  <input class="maj" type="text" name="f_ref" id="f_ref" value="<?php echo value('f_ref'); ?>">
+                  <b class="tooltip tooltip-top-right">La référence fournisseur doit contenir 10 caractères maximum</b>
+                </label>
+                <div class="note"><strong>Note:</strong> Ex: F5478EF</div> 
+                <input type="button" value="Générer" onClick="generate(this.form.gen_ref.value)">
+                <input type="hidden" name="gen_ref" value="10"> 
+              </label>           
             </section>
 
             <section>

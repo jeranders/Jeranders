@@ -2,10 +2,10 @@
 include '../bdd.php';
 include '../function.php';
 
-$h_page = 'Liste catégories';
+$h_page = 'Liste composant de produit';
 
-include 'pages/desactive_categorie.php';
-include 'pages/active_categorie.php';
+include 'pages/desactive_produit_c.php';
+include 'pages/active_produit_c.php';
 
 include 'header-top.php'; ?>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -13,14 +13,14 @@ include 'header-top.php'; ?>
 <meta name="author" content="E-asy Gest">
 <meta name="description" content="Gestion pour auto-entrepreneur">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Liste des catégories</title>
+<title>Liste des composants de produits</title>
 <?php include 'header-bottom.php'; ?>
 
 <!--Breadcrumb-->
 <div class="breadcrumb clearfix">
   <ul>
     <li><a href="index.php"><i class="fa fa-home"></i></a></li>
-    <li><a href="liste_categories.php">Liste des catégories</a></li>
+    <li><a href="liste_produit_c.php">Liste des composants de produits</a></li>
 
   </ul>
 </div>
@@ -30,7 +30,7 @@ include 'header-top.php'; ?>
 <?php include 'astuces.php'; ?>
 
 <div class="page-header">
-  <h1>Liste catégories</h1>
+  <h1>Liste des composants de produits</h1>
 </div>
 
 <!-- Widget Row Start grid -->
@@ -41,7 +41,7 @@ include 'header-top.php'; ?>
     <!-- New widget -->
     <div class="powerwidget" id="datatable-filter-column" data-widget-editbutton="false">
       <header>
-        <h2>Catégories</h2>
+        <h2>Composants</h2>
       </header>
       <div class="inner-spacer">
         <table class="display table table-striped table-hover" id="table-2">
@@ -49,7 +49,7 @@ include 'header-top.php'; ?>
             <tr>
               <th>Nom</th>
               <th>Référence</th>
-              <th>Description</th>
+              <th>Commentaire</th>
               <th>Active</th>
               <th>Contrôle</th>
             </tr>
@@ -57,16 +57,16 @@ include 'header-top.php'; ?>
           <tbody>
 
             <?php 
-            $categories = $bdd->prepare('SELECT * FROM membres, categories WHERE membres.id_membre = categories.id_membre AND membres.id_membre = :id ORDER BY c_date DESC LIMIT 0, 10');
-            $categories->execute(array('id' => $_SESSION['id_membre']));
-            while ($donnees = $categories->fetch()){
+            $produit_c = $bdd->prepare('SELECT * FROM membres, produit_c WHERE membres.id_membre = produit_c.id_membre AND membres.id_membre = :id ORDER BY pc_date DESC LIMIT 0, 10');
+            $produit_c->execute(array('id' => $_SESSION['id_membre']));
+            while ($donnees = $produit_c->fetch()){
               ?>
               <tr>
-                <td><a href="categorie.php?p=<?php echo $donnees['id_categorie']; ?>"><?php echo $donnees['c_nom']; ?></a> </td>
-                <td><?php echo $donnees['c_ref']; ?> </td>
-                <td><?php echo $donnees['c_description']; ?> </td>
+                <td><a href="produit_c.php?p=<?php echo $donnees['id_produit_c']; ?>"><?php echo $donnees['pc_nom']; ?></a> </td>
+                <td><?php echo $donnees['pc_ref']; ?> </td>
+                <td><?php echo $donnees['pc_commentaire']; ?> </td>
                 <?php          
-                if ($donnees['c_active'] == 1) {
+                if ($donnees['pc_active'] == 1) {
                   ?>
                   <td><span class="label label-success">Active</span></td>
                   <?php
@@ -77,17 +77,17 @@ include 'header-top.php'; ?>
                 }
                 ?>
                 <td> 
-                  <a href="categories.php?modif=<?php echo $donnees['id_categorie']; ?>" class="btn btn-success tooltiped" data-toggle="tooltip" data-placement="bottom" title="Modifier"><i class="fa fa-edit"></i></a>  
+                  <a href="produit_c.php?modif=<?php echo $donnees['id_produit_c']; ?>" class="btn btn-success tooltiped" data-toggle="tooltip" data-placement="bottom" title="Modifier"><i class="fa fa-edit"></i></a>  
                   <a  class="btn btn-danger tooltiped" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fa fa-trash-o"></i></a> 
 
                   <?php          
-                  if ($donnees['c_active'] == 1) {
+                  if ($donnees['pc_active'] == 1) {
                     ?>
-                    <a href="liste_categories.php?desactive=<?php echo $donnees['id_categorie']?>&<?php echo csrf(); ?>" class="btn btn-warning tooltiped" data-toggle="tooltip" data-placement="bottom" title="Désactiver"><i class="fa fa-power-off"></i></a>
+                    <a href="liste_produit_c.php?desactive=<?php echo $donnees['id_produit_c']?>&<?php echo csrf(); ?>" class="btn btn-warning tooltiped" data-toggle="tooltip" data-placement="bottom" title="Désactiver"><i class="fa fa-power-off"></i></a>
                     <?php
                   }else{
                     ?>
-                    <a href="liste_categories.php?active=<?php echo $donnees['id_categorie']?>&<?php echo csrf(); ?>" class="btn btn-success tooltiped" data-toggle="tooltip" data-placement="bottom" title="Activer"><i class="fa fa-power-off"></i></a>
+                    <a href="liste_produit_c.php?active=<?php echo $donnees['id_produit_c']?>&<?php echo csrf(); ?>" class="btn btn-success tooltiped" data-toggle="tooltip" data-placement="bottom" title="Activer"><i class="fa fa-power-off"></i></a>
                     <?php
                   }
                   ?>
@@ -96,7 +96,7 @@ include 'header-top.php'; ?>
                 <?php
                 echo '</tr>';
               } 
-              $categories->closeCursor();
+              $produit_c->closeCursor();
               ?>
             </tbody>
             <tfoot>

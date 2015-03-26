@@ -2,6 +2,7 @@
 
 // Suppression du fournisseur
 if (isset($_GET['active'])) {
+	$_GET['active'] = (int)$_GET['active'];
 	checkCsrf();
 	$req = $bdd->prepare('SELECT * FROM categories WHERE id_categorie = :id_categorie');
 	$req->execute(array('id_categorie' => $_GET['active']));

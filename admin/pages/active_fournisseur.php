@@ -2,6 +2,7 @@
 
 // Suppression du fournisseur
 if (isset($_GET['active'])) {
+	$_GET['active'] = (int)$_GET['active'];
 	checkCsrf();
 	$req = $bdd->prepare('SELECT * FROM fournisseurs WHERE id_fournisseur = :id_fournisseur');
 	$req->execute(array('id_fournisseur' => $_GET['active']));

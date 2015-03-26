@@ -27,9 +27,9 @@
       <div class="navbar-content"> 
 
         <!--Sidebar Toggler--> 
-        <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Montant du compte">Compte : <?php echo info_active('compte'); ?> €</i></a> 
-        <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Chiffre d'affaire du mois">CA : 1258,25 €</i></a> 
-        <a href="#" class="btn btn-default left-toggler tooltiped" data-toggle="tooltip" data-placement="bottom" title="Dépenses du mois">Dépenses: 708 €</i></a> 
+        <a href="#" class="btn btn-default tooltiped" data-toggle="tooltip" data-placement="bottom" title="Montant du compte">Compte : <?php echo info_active('compte'); ?> €</i></a> 
+        <a href="#" class="btn btn-default tooltiped" data-toggle="tooltip" data-placement="bottom" title="Chiffre d'affaire du mois">CA : 1258,25 €</i></a> 
+        <a href="#" class="btn btn-default tooltiped" data-toggle="tooltip" data-placement="bottom" title="Dépenses du mois">Dépenses: 708 €</i></a> 
         <a href="#" class="btn btn-default left-toggler"><i class="fa fa-bars"></i></a> 
         <!--Right Userbar Toggler--> 
         <a href="#" class="btn btn-user right-toggler pull-right"><i class="entypo-vcard"></i> <span class="logged-as hidden-xs">Logged as</span><span class="logged-as-name hidden-xs">Anton Durant</span></a> 
@@ -257,6 +257,8 @@
                         <ul id="produit-sub">
                           <li><a href="#" ><i class="fa fa-cubes"></i><span> Ajouter produit </span></a></li>
                           <li><a href="#"><i class="fa fa-cubes"></i><span> Voir les produits </span></a></li>
+                          <li><a href="ajout_produit_c.php" ><i class="fa fa-cubes"></i><span> Ajouter un composant produit </span></a></li>
+                          <li><a href="liste_produit_c.php"><i class="fa fa-cubes"></i><span> Voir les un composant produits </span></a></li>
                           <li><a href="ajout_categorie.php"><i class="fa fa-cubes"></i><span> Ajouter une catégorie </span></a></li>
                           <li><a href="liste_categories.php"><i class="fa fa-cubes"></i><span> Voir les catégories </span></a></li>
                         </ul>

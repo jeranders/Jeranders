@@ -4,7 +4,7 @@ if (isset($_POST['send'])) {
   $c_description = htmlentities($_POST['c_description']);
   $c_ref = strtoupper(securisation($_POST['c_ref']));  
   $c_active = securisation($_POST['c_active']);
-  $id_membre = $_SESSION['id_membre'];
+  $id_membre = (int)$_SESSION['id_membre'];
 
   if ($c_nom != "") {
 

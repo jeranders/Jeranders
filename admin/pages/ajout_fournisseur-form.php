@@ -11,8 +11,8 @@ if (isset($_POST['send'])) {
   $f_ville = securisation($_POST['f_ville']);
   $f_pays = securisation($_POST['f_pays']);
   $f_commentaire = htmlentities($_POST['f_commentaire']);
-  $f_active = securisation($_POST['f_active']);
-  $id_membre = $_SESSION['id_membre'];
+  $f_active = (int)$_POST['f_active'];
+  $id_membre = (int)$_SESSION['id_membre'];
 
   if ($f_nom != "") {
 

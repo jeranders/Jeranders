@@ -94,6 +94,41 @@
 		}
 		
 	};
+
+
+
+
+
+check['pc_nom'] = function(id) {
+		
+		var name = document.getElementById(id),
+		tooltipStyle = getTooltip(name).style;
+		
+		if (name.value.length >= 2) {
+			name.className = 'correct';
+			return true;
+		} else {
+			name.className = 'incorrect';
+			return false;
+		}
+		
+	};
+
+
+	check['pc_ref'] = function(id) {
+		
+		var name = document.getElementById(id),
+		tooltipStyle = getTooltip(name).style;
+		
+		if (name.value.length <= 10) {
+			name.className = 'correct';
+			return true;
+		} else {
+			name.className = 'incorrect';
+			return false;
+		}
+		
+	};
 	
 	// check['firstName'] = check['lastName']; // La fonction pour le prénom est la même que celle du nom
 	
@@ -226,25 +261,3 @@
 	})();
 	
 	
-
-/*
- *Fonction génération Référence
- */
-
- var keylist="0123456789abcdefghijklmnopqrstuvwxyz"
- var temp=''
-
- function generation_ref(plength){
- 	temp=''
- 	for (i=0;i<plength;i++)
- 		temp+=keylist.charAt(Math.floor(Math.random()*keylist.length))
- 	return temp
- }
-
- function generate(enterlength){
- 	document.r_generate.f_ref.value=generation_ref(enterlength)
- }
-
-function generate(enterlength){
- 	document.r_generate.c_ref.value=generation_ref(enterlength)
- }
