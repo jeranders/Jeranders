@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 26 Mars 2015 à 10:32
+-- Généré le :  Mar 31 Mars 2015 à 12:36
 -- Version du serveur :  5.6.21
 -- Version de PHP :  5.6.3
 
@@ -58,17 +58,15 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `id_membre` int(11) NOT NULL,
   `c_active` int(11) NOT NULL,
   `c_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `categories`
 --
 
 INSERT INTO `categories` (`id_categorie`, `c_nom`, `c_description`, `c_ref`, `id_membre`, `c_active`, `c_date`) VALUES
-(1, 'Cabochon', '', 'XXAMF', 1, 1, '2015-03-23 12:58:27'),
-(2, 'Cabochon', '', '', 2, 1, '2015-03-23 14:55:47'),
-(3, 'Bagues', '', 'W4CD9', 2, 1, '2015-03-26 00:24:19'),
-(4, 'Accroche-Sac', '', 'Y4YRQ', 2, 0, '2015-03-26 00:24:35');
+(1, 'Divers', '', 'DFLKK', 1, 0, '2015-03-27 10:30:49'),
+(2, 'Cabochon', '', 'SDFS', 1, 1, '2015-03-27 10:35:06');
 
 -- --------------------------------------------------------
 
@@ -166,16 +164,14 @@ CREATE TABLE IF NOT EXISTS `fournisseurs` (
   `f_date` datetime NOT NULL,
   `id_membre` int(11) NOT NULL,
   `f_active` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf32;
 
 --
 -- Contenu de la table `fournisseurs`
 --
 
 INSERT INTO `fournisseurs` (`id_fournisseur`, `f_nom`, `f_ref`, `f_email`, `f_site`, `f_tel`, `f_fax`, `f_commentaire`, `f_pays`, `f_logo`, `f_adresse`, `f_code_postal`, `f_ville`, `f_date`, `id_membre`, `f_active`) VALUES
-(1, 'Alex', '42nq436nqi', 'Alex@test.fr', '', '0102030405', '', '', 'BI', '', '', '', '', '2015-03-20 11:17:05', 1, 0),
-(2, 'Lequipe', 'exgayl7dzr', 'lequipe@df.df', 'test.fr', '', '', '', 'AF', '', '', '', '', '2015-03-20 23:07:56', 1, 1),
-(3, 'Moltes', 'AQUL57NAS6', 'lequipe@moltes.fr', '', '', '', '', 'BT', '', '', '', '', '2015-03-23 09:19:31', 1, 1);
+(1, 'Alex', 'BDFPOK', '', '', '', '', '', 'DE', '', '', '', '', '2015-03-27 10:25:30', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -191,68 +187,23 @@ CREATE TABLE IF NOT EXISTS `historiques` (
   `h_description` text NOT NULL,
   `h_ip` varchar(255) NOT NULL,
   `h_id_membre` int(10) unsigned NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf32;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf32;
 
 --
 -- Contenu de la table `historiques`
 --
 
 INSERT INTO `historiques` (`id_h`, `h_page`, `h_date`, `h_type`, `h_description`, `h_ip`, `h_id_membre`) VALUES
-(1, 'Ajout d''un fournisseur', '2015-03-20 11:17:06', '2', 'Ajout du fournisseur Alex', '127.0.0.1', 1),
-(2, 'Liste fournisseurs', '2015-03-20 16:32:36', '3', 'Activation du fournisseur ', '127.0.0.1', 1),
-(3, 'Liste fournisseurs', '2015-03-20 16:35:34', '3', 'Activation du fournisseur ', '127.0.0.1', 1),
-(4, 'Liste fournisseurs', '2015-03-20 16:39:25', '4', 'Activation du fournisseur ', '127.0.0.1', 1),
-(5, 'Liste fournisseurs', '2015-03-20 16:39:50', '4', 'Désactivation du fournisseur ', '127.0.0.1', 1),
-(6, 'Liste fournisseurs', '2015-03-20 16:44:17', '4', 'Désactivation du fournisseur ', '127.0.0.1', 1),
-(7, 'Liste fournisseurs', '2015-03-20 16:44:39', '4', 'Désactivation du fournisseur ', '127.0.0.1', 1),
-(8, 'Liste fournisseurs', '2015-03-20 17:24:12', '4', 'Désactivation du fournisseur ', '127.0.0.1', 1),
-(9, 'Liste fournisseurs', '2015-03-20 18:42:43', '4', 'Désactivation du fournisseur Alex', '127.0.0.1', 1),
-(10, 'Ajout d''un fournisseur', '2015-03-20 23:07:56', '2', 'Ajout du fournisseur Lequipe', '127.0.0.1', 1),
-(11, 'Liste fournisseurs', '2015-03-21 11:19:11', '4', 'Activation du fournisseur Alex', '127.0.0.1', 1),
-(12, 'Liste fournisseurs', '2015-03-21 11:19:15', '4', 'Désactivation du fournisseur Alex', '127.0.0.1', 1),
-(13, 'Liste fournisseurs', '2015-03-21 11:19:18', '4', 'Désactivation du fournisseur Lequipe', '127.0.0.1', 1),
-(14, 'Liste fournisseurs', '2015-03-21 11:19:22', '4', 'Activation du fournisseur Alex', '127.0.0.1', 1),
-(15, 'Liste fournisseurs', '2015-03-21 11:19:25', '4', 'Activation du fournisseur Lequipe', '127.0.0.1', 1),
-(16, 'Liste fournisseurs', '2015-03-21 13:00:21', '4', 'Désactivation du fournisseur Lequipe', '127.0.0.1', 1),
-(17, 'Liste fournisseurs', '2015-03-21 13:00:22', '4', 'Désactivation du fournisseur Alex', '127.0.0.1', 1),
-(18, 'Liste fournisseurs', '2015-03-21 13:01:03', '4', 'Activation du fournisseur Alex', '127.0.0.1', 1),
-(19, 'Liste fournisseurs', '2015-03-21 13:01:11', '4', 'Activation du fournisseur Lequipe', '127.0.0.1', 1),
-(20, 'Liste fournisseurs', '2015-03-21 16:57:19', '4', 'Désactivation du fournisseur Alex', '127.0.0.1', 1),
-(21, 'Liste fournisseurs', '2015-03-21 17:38:43', '4', 'Activation du fournisseur Alex', '127.0.0.1', 1),
-(22, 'Ajout d''un fournisseur', '2015-03-23 09:19:31', '2', 'Ajout du fournisseur Moltes', '127.0.0.1', 1),
-(23, 'Ajout d''une catégorie', '2015-03-23 11:21:16', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(24, 'Ajout d''une catégorie', '2015-03-23 11:22:31', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(25, 'Ajout d''une catégorie', '2015-03-23 11:27:21', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(26, 'Ajout d''une catégorie', '2015-03-23 11:30:17', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(27, 'Ajout d''une catégorie', '2015-03-23 11:34:10', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(28, 'Ajout d''une catégorie', '2015-03-23 11:37:25', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(29, 'Ajout d''une catégorie', '2015-03-23 11:38:19', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(30, 'Ajout d''une catégorie', '2015-03-23 11:38:28', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(31, 'Ajout d''une catégorie', '2015-03-23 11:39:24', '2', 'Ajout de la catégorie Sdfsdfsdf', '127.0.0.1', 1),
-(32, 'Ajout d''une catégorie', '2015-03-23 11:40:42', '2', 'Ajout de la catégorie Sdfsdfsdf', '127.0.0.1', 1),
-(33, 'Ajout d''une catégorie', '2015-03-23 12:03:21', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(34, 'Ajout d''une catégorie', '2015-03-23 12:04:37', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(35, 'Ajout d''une catégorie', '2015-03-23 12:29:24', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(36, 'Ajout d''une catégorie', '2015-03-23 12:34:00', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(37, 'Ajout d''une catégorie', '2015-03-23 12:37:30', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(38, 'Ajout d''une catégorie', '2015-03-23 12:38:11', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(39, 'Ajout d''une catégorie', '2015-03-23 12:38:22', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(40, 'Ajout d''une catégorie', '2015-03-23 12:40:45', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(41, 'Ajout d''une catégorie', '2015-03-23 12:41:22', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(42, 'Ajout d''une catégorie', '2015-03-23 12:41:50', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(43, 'Ajout d''une catégorie', '2015-03-23 12:58:27', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
-(44, 'Liste fournisseurs', '2015-03-23 13:15:39', '4', 'Désactivation de la categorie Cabochon', '127.0.0.1', 1),
-(45, 'Liste fournisseurs', '2015-03-23 13:18:17', '4', 'Activation de la catégorie Cabochon', '127.0.0.1', 1),
-(46, 'Liste fournisseurs', '2015-03-23 13:18:25', '4', 'Désactivation de la categorie Cabochon', '127.0.0.1', 1),
-(47, 'Liste fournisseurs', '2015-03-23 13:18:27', '4', 'Activation de la catégorie Cabochon', '127.0.0.1', 1),
-(48, 'Liste fournisseurs', '2015-03-23 13:18:29', '4', 'Désactivation de la categorie Cabochon', '127.0.0.1', 1),
-(49, 'Liste fournisseurs', '2015-03-23 13:18:31', '4', 'Activation de la catégorie Cabochon', '127.0.0.1', 1),
-(50, 'Ajout d''une catégorie', '2015-03-23 14:55:47', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 2),
-(51, 'Liste fournisseurs', '2015-03-23 15:25:03', '4', 'Désactivation de la categorie Cabochon', '127.0.0.1', 1),
-(52, 'Liste fournisseurs', '2015-03-23 15:25:07', '4', 'Activation de la catégorie Cabochon', '127.0.0.1', 1),
-(53, 'Liste fournisseurs', '2015-03-23 15:27:04', '4', 'Désactivation du fournisseur Alex', '127.0.0.1', 1),
-(54, 'Ajout d''une catégorie', '2015-03-26 00:24:19', '2', 'Ajout de la catégorie Bagues', '127.0.0.1', 2),
-(55, 'Ajout d''une catégorie', '2015-03-26 00:24:35', '2', 'Ajout de la catégorie Accroche-Sac', '127.0.0.1', 2);
+(1, 'Ajout d''un fournisseur', '2015-03-27 10:25:31', '2', 'Ajout du fournisseur Alex', '127.0.0.1', 1),
+(2, 'Liste fournisseurs', '2015-03-27 10:26:15', '4', 'Désactivation du fournisseur Alex', '127.0.0.1', 1),
+(3, 'Liste fournisseurs', '2015-03-27 10:26:27', '4', 'Activation du fournisseur Alex', '127.0.0.1', 1),
+(4, 'Ajout d''un produit composant.', '2015-03-27 10:28:14', '2', 'Ajout du composant produit Bague XLL', '127.0.0.1', 1),
+(5, 'Ajout d''un produit composant.', '2015-03-27 10:29:40', '2', 'Ajout du composant produit Sdfsdffsd', '127.0.0.1', 1),
+(6, 'Ajout d''une catégorie', '2015-03-27 10:30:49', '2', 'Ajout de la catégorie Divers', '127.0.0.1', 1),
+(7, 'Ajout d''un produit composant.', '2015-03-27 10:31:11', '2', 'Ajout du composant produit Bague XXL', '127.0.0.1', 1),
+(8, 'Liste catégories', '2015-03-27 10:31:30', '4', 'Désactivation de la categorie Divers', '127.0.0.1', 1),
+(9, 'Ajout d''une catégorie', '2015-03-27 10:35:06', '2', 'Ajout de la catégorie Cabochon', '127.0.0.1', 1),
+(10, 'Liste catégories', '2015-03-31 10:47:51', '4', 'Activation de la catégorie Cabochon', '127.0.0.1', 1);
 
 -- --------------------------------------------------------
 
@@ -559,22 +510,27 @@ CREATE TABLE IF NOT EXISTS `produit_c` (
 `id_produit_c` int(11) NOT NULL,
   `pc_nom` varchar(255) NOT NULL COMMENT 'Nom du produit',
   `pc_ref` varchar(255) NOT NULL COMMENT 'Reférence du produit',
-  `pc_type_produit` int(11) NOT NULL COMMENT 'id du type de produit',
+  `id_categorie` int(11) NOT NULL COMMENT 'id du type de produit',
   `pc_image` varchar(255) NOT NULL COMMENT 'Image du produit',
   `pc_dernier_prix` float(11,2) NOT NULL COMMENT 'Prix de la dernière commande',
   `pc_derniere_date` date NOT NULL COMMENT 'Date de la dernière commande',
   `pc_derniere_quantite` int(11) NOT NULL COMMENT 'Dernière quantité commandé',
   `pc_description` text NOT NULL COMMENT 'Description du produit',
   `pc_commentaire` text NOT NULL COMMENT 'Commentaire sur le produit',
-  `pc_dernier_fournisseur` int(11) NOT NULL COMMENT 'id du dernier fournisseur de la dernière commande'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf32 COMMENT='Produit consommable ';
+  `pc_dernier_fournisseur` int(11) NOT NULL COMMENT 'id du dernier fournisseur de la dernière commande',
+  `id_membre` int(11) NOT NULL,
+  `pc_date` datetime NOT NULL,
+  `pc_active` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf32 COMMENT='Produit consommable ';
 
 --
 -- Contenu de la table `produit_c`
 --
 
-INSERT INTO `produit_c` (`id_produit_c`, `pc_nom`, `pc_ref`, `pc_type_produit`, `pc_image`, `pc_dernier_prix`, `pc_derniere_date`, `pc_derniere_quantite`, `pc_description`, `pc_commentaire`, `pc_dernier_fournisseur`) VALUES
-(1, 'Cabochon en verre 18mm', 'CABO18', 1, '', 3.30, '2015-01-05', 20, 'Cabochon en verre de taille 18mm', 'Très bon produit', 2);
+INSERT INTO `produit_c` (`id_produit_c`, `pc_nom`, `pc_ref`, `id_categorie`, `pc_image`, `pc_dernier_prix`, `pc_derniere_date`, `pc_derniere_quantite`, `pc_description`, `pc_commentaire`, `pc_dernier_fournisseur`, `id_membre`, `pc_date`, `pc_active`) VALUES
+(1, 'Bague XLL', '', 0, '', 0.00, '0000-00-00', 0, '', '', 0, 1, '2015-03-27 10:28:14', 1),
+(2, 'Sdfsdffsd', '', 0, '', 0.00, '0000-00-00', 0, '', '', 0, 1, '2015-03-27 10:29:40', 1),
+(3, 'Bague XXL', '', 1, '', 0.00, '0000-00-00', 0, '', '', 0, 1, '2015-03-27 10:31:11', 1);
 
 --
 -- Index pour les tables exportées
@@ -647,7 +603,7 @@ MODIFY `id_achat` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
-MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `configurations`
 --
@@ -662,12 +618,12 @@ MODIFY `id_config_activite` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT pour la table `fournisseurs`
 --
 ALTER TABLE `fournisseurs`
-MODIFY `id_fournisseur` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id_fournisseur` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `historiques`
 --
 ALTER TABLE `historiques`
-MODIFY `id_h` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
+MODIFY `id_h` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `membres`
 --
@@ -682,7 +638,7 @@ MODIFY `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=242;
 -- AUTO_INCREMENT pour la table `produit_c`
 --
 ALTER TABLE `produit_c`
-MODIFY `id_produit_c` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_produit_c` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
