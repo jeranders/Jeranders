@@ -2,9 +2,9 @@
 include '../bdd.php';
 include '../function.php';
 
-$h_page = "Ajout d'un fournisseur";
+$h_page = "Création d'un produit";
 
-include 'pages/ajout_fournisseur-form.php';
+//include 'pages/ajout_produit-form.php';
 
 include 'header-top.php'; ?>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -12,137 +12,66 @@ include 'header-top.php'; ?>
 <meta name="author" content="E-asy Gest">
 <meta name="description" content="Gestion pour auto-entrepreneur">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ajout d'un fournisseur</title>
+<title>Création d'un produit</title>
 <?php include 'header-bottom.php'; ?>
 
 <!--Breadcrumb-->
 <div class="breadcrumb clearfix">
   <ul>
     <li><a href="index.php"><i class="fa fa-home"></i></a></li>
-    <li><a href="ajout_fournisseur.php">Ajout d'un fournisseur</a></li>
+    <li><a href="ajout_produit.php">Création d'un produit</a></li>
 
   </ul>
 </div>
 <!--/Breadcrumb-->
 
-<?php echo flash(); ?>
+<?php echo flash();?>
 <?php include 'astuces.php'; ?>
 
 <div class="page-header">
-  <h1>Ajout d'un fournisseur</h1>
+  <h1>Création d'un produit</h1>
 </div>
-
-
-
 
 <!-- Widget Row Start grid -->
 <div class="row">
   <div class="col-md-12 bootstrap-grid"> 
 
-
    <!-- New widget -->
    <div class="col-md-6  bootstrap-grid">
     <div class="powerwidget green" id="most-form-elements" data-widget-editbutton="false">
       <header>
-        <h2>Ajout fournisseur</h2>
+        <h2>Création d'un produit</h2>
       </header>
       <div class="inner-spacer">
         <form action="#" method="post" class="orb-form" id="myForm" name="r_generate">
           <fieldset>
             <section>
-              <label class="label">Nom du fournisseur</label>
+              <label class="label">Nom du produit</label>
               <label class="input"> <i class="icon-append fa fa-question"></i>
-                <input type="text" name="f_nom" id="f_nom" value="<?php echo value('f_nom'); ?>">
-                <b class="tooltip tooltip-top-right">Un nom de fournisseur ne peut pas faire moins de 2 caractères</b>
+                <input type="text" name="c_nom" id="c_nom" value="<?php echo value('c_nom'); ?>">
+                <b class="tooltip tooltip-top-right">Le nom d'une catégorie ne peut pas faire moins de 2 caractères</b>
               </label>
             </section>
 
 
             <section>
               <label class="label">Reférence</label>
-              <label class="input">
-                <label class="input"> <i class="icon-append fa fa-question"></i>
-                  <input class="maj" type="text" name="f_ref" id="f_ref" value="<?php echo value('f_ref'); ?>">
-                  <b class="tooltip tooltip-top-right">La référence fournisseur doit contenir 10 caractères maximum</b>
-                </label>
-                <div class="note"><strong>Note:</strong> Ex: F5478EF</div> 
-                <input type="button" value="Générer" onClick="generate(this.form.gen_ref.value)">
-                <input type="hidden" name="gen_ref" value="10"> 
-              </label>           
-            </section>
+              <label class="input"> <i class="icon-append fa fa-question"></i>
+                <input type="text" name="c_ref" id="c_ref" value="<?php echo value('c_ref'); ?>">
+                <b class="tooltip tooltip-top-right">La référence d'une catégorie doit contenir 5 caractères maximum</b>
+              </label>
+            </section>       
+          
 
             <section>
-              <label class="label">Site web</label>
-              <label class="input">
-                <input type="text" name="f_site" value="<?php echo value('f_site'); ?>">
-              </label>
-            </section>
-
-            <section>
-              <label class="label">Contact email</label>
-              <label class="input">
-                <input type="email" name="f_email" value="<?php echo value('f_email'); ?>">
-              </label>
-            </section>
-
-            <section>
-              <label class="label">Téléphone</label>
-              <label class="input">
-                <input type="text" name="f_tel" value="<?php echo value('f_tel'); ?>">
-              </label>
-            </section>
-
-            <section>
-              <label class="label">Fax</label>
-              <label class="input">
-                <input type="text" name="f_fax" value="<?php echo value('f_fax'); ?>">
-              </label>
-            </section>          
-
-            <section>
-              <label class="label">Adresse</label>
-              <label class="input">
-                <input type="text" name="f_adresse" value="<?php echo value('f_adresse'); ?>">
-              </label>
-            </section>
-            <section>
-              <label class="label">Code Postal</label>
-              <label class="input">
-                <input type="text" name="f_code_postal" value="<?php echo value('f_code_postal'); ?>">
-              </label>
-            </section>
-
-            <section>
-              <label class="label">Ville</label>
-              <label class="input">
-                <input type="text" name="f_ville" value="<?php echo value('f_ville'); ?>">
-              </label>
-            </section>
-
-            <section>
-              <label class="label">Pays</label>
-              <label class="select">
-                <select class="select2" name="f_pays" value="<?php echo value('f_pays'); ?>">
-                  <?php
-                  $pays = $bdd->query('SELECT * FROM pays ORDER BY nom_fr_fr ASC');
-                  while ($donnees = $pays->fetch()){
-                    echo '<option value="'.$donnees['alpha2'].'">' .  $donnees['nom_fr_fr'] . '</option>';
-                  } 
-                  $pays->closeCursor();
-                  ?>
-                </select>
-              </label>
-            </section>   
-
-            <section>
-              <label class="label">Commentaire</label>
+              <label class="label">Description</label>
               <label class="textarea textarea-expandable">
-                <textarea rows="3" name="f_commentaire"><?php echo value('f_commentaire'); ?></textarea>
+                <textarea rows="3" name="c_description"><?php echo value('c_description'); ?></textarea>
               </label>
             </section>         
 
             <label class="toggle">
-              <input type="checkbox" name="f_active" value="1" checked >
+              <input type="checkbox" name="c_active" value="1" checked >
               <i></i>Activer
             </label>
 
@@ -159,7 +88,7 @@ include 'header-top.php'; ?>
     <div class="col-md-6  bootstrap-grid">
       <div class="powerwidget cold-grey" id="table2" data-widget-editbutton="false">
         <header>
-          <h2>Dernier fournisseur</h2>
+          <h2>Derniere création</h2>
         </header>
         <div class="inner-spacer">
           <table class="table table-condensed table-bordered margin-0px">
@@ -167,27 +96,27 @@ include 'header-top.php'; ?>
               <tr>
                 <th>Nom</th>
                 <th>Référence</th>
-                <th>Email</th>
+                <th>Description</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tbody>
               <?php 
-              $fournisseurs = $bdd->prepare('SELECT * FROM membres, fournisseurs WHERE membres.id_membre = fournisseurs.id_membre AND membres.id_membre = :id ORDER BY f_date DESC LIMIT 0, 10');
-              $fournisseurs->execute(array('id' => $_SESSION['id_membre']));
-              while ($donnees = $fournisseurs->fetch()){
+              $categories = $bdd->prepare('SELECT * FROM membres, categories WHERE membres.id_membre = categories.id_membre AND membres.id_membre = :id ORDER BY c_date DESC LIMIT 0, 10');
+              $categories->execute(array('id' => $_SESSION['id_membre']));
+              while ($donnees = $categories->fetch()){
                 echo '<tr>';
-                echo '<td>' .  $donnees['f_nom'] . '</td>';
-                echo '<td>' .  $donnees['f_ref'] . '</td>';
-                echo '<td>' .  $donnees['f_email'] . '</td>';
-                if ($donnees['f_active'] == 1) {
+                echo '<td>' .  $donnees['c_nom'] . '</td>';
+                echo '<td>' .  $donnees['c_ref'] . '</td>';
+                echo '<td>' .  $donnees['c_description'] . '</td>';
+                if ($donnees['c_active'] == 1) {
                   echo '<td><span class="label label-success">Active</span></td>';
                 }else{
                   echo '<td><span class="label label-danger">Desactivé</span></td>';
                 }                
                 echo '</tr>';
               } 
-              $fournisseurs->closeCursor();
+              $categories->closeCursor();
               ?>
 
 
@@ -197,6 +126,7 @@ include 'header-top.php'; ?>
       </div>
     </div>
     <!-- End powerwidget -->
+
 
   </div>
   <!-- /Inner Row Col-md-12 --> 

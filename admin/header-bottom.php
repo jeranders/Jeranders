@@ -14,16 +14,6 @@
     <!--Navigation-->
     <nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="index.php">Accueil</a> 
 
-
-
-
-
-
-
-
-
-
-
       <!--Navigation Itself-->
       
       <div class="navbar-content"> 
@@ -264,7 +254,7 @@
 
                       <li><a class="submenu" href="#" title="Produits" data-id="produit-sub"><i class="entypo-briefcase"></i><span> Produits</span></a>
                         <ul id="produit-sub">
-                          <li><a href="#" ><i class="fa fa-cubes"></i><span> Ajouter produit </span></a></li>
+                          <li><a href="ajout_produit.php" ><i class="fa fa-cubes"></i><span> Ajouter produit </span></a></li>
                           <li><a href="#"><i class="fa fa-cubes"></i><span> Voir les produits </span></a></li>
                         </ul>
                       </li>
