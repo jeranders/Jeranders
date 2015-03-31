@@ -1,76 +1,4 @@
 @charset "utf-8";
-/* CSS Document */
-
-/* ========================================================================
-	TABLE OF CONTENTS
-	1. Imports and body
-	2. Typography (Text Elements, Headers, smalls)
-	3. ORB WIDGETS
-		3.1. Portlets (Widgets as portlets)
-	4. Bootstrap Styles Override (Modals, Panels, Navs, Carousel, Tabs, Colors, List Groups, Buttons, Pagination, Progress Bars, Alerts, Tables)
-	5. Page Globals (Elements used on every page)
-		5.1 Top Horizontal Menu With Sparklines Charts
-		5.2 Left Main Menu Nav
-		5.3 Breadcrumbs
-		5.4 Main Top Menu
-		5.5 Social Icons
-		5.5 Scroll to Top
-	6. Forms
-		8.1 Bootstrap Forms 
-		8.2 ORB Forms	
-		
-	7. JS and JQuery Plugins Styling
-		7.1 Chart.JS
-		7.2 FlotChart Charts
-		7.3 Morris Charts
-		7.4 Sparklines Charts (+ Index Page Tiny Boxes)
-		7.5 EasyPie
-		7.6 JustGauge Charts
-		7.7 Summernote Editor
-		7.8 Datatable Extra - Colvis
-		7.9 Nanoscroller
-		7.10 Range ION Slider
-		7.11 Google Maps
-		7.12 Vector Maps (JQVMaps)
-		7.13 JQuery Knob
-		7.14 Nestable Lists
-		7.15 Tree Menu	
-		
-	8. Pages
-		8.1 Index
-		8.1 Gallery
- 		8.2 Search Page
-		8.3 User Directory with Switch
-		8.4 Pricing Page
-		8.5 Inbox Page
-		8.6 Profile Page
-		8.7 Invoice Page
-		8.8 Forum
-		8.9 Calendar
-		8.10 Chat
-		8.11 Timeline
-		8.12 Font Icons Page
-
-
-	9. Off-canvas Right User Menu and its elements (ToDo) 
-	10. Media Queries 
-	11. Standalone Pages 
-	12. Color Helpers (We use it to quickly override color options for classes)
-	13. Examples, Code Highlight, CallOuts and other stuff
- 
- * ======================================================================== */
-
-
-
-/* ========================================================================
- * ========================================================================
- * ========================================================================
- * 1. IMPORTS AND BODY
- * ========================================================================
- * ========================================================================
- * ======================================================================== */
-
-
 
 /* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
@@ -1931,7 +1859,7 @@ a.list-group-item-warning:focus {
 
 .navbar-brand {
 	width: 200px;
-	color: #555;
+	color: #FFF;
 	font-weight: 900;
 	text-transform: uppercase;
 	font-size: 35px;
@@ -2717,7 +2645,7 @@ object {
 	border-radius: 3px;
 	margin-bottom: 15px;
 	margin-top: -5px;
-	background-color: #dddddb;
+	background-color: #555;
 }
 .breadcrumb ul {
 	list-style: none outside none;

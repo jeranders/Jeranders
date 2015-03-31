@@ -14,14 +14,16 @@
     <!--Navigation-->
     <nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="index.php">Accueil</a> 
 
-      <!--Search-->
-      <div class="site-search">
-        <form action="#" id="inline-search">
-          <i class="fa fa-search"></i>
-          <input type="search" placeholder="Search">
-        </form>
-      </div>
-      
+
+
+
+
+
+
+
+
+
+
       <!--Navigation Itself-->
       
       <div class="navbar-content"> 
@@ -244,6 +246,13 @@
                       <div class="menuicon"><i class="fa fa-angle-down"></i></div>
                     </div>
                     <ul id="menu">
+                      <!--Search-->
+                      <div class="site-search">
+                        <form action="#" id="inline-search">
+                          <i class="fa fa-search"></i>
+                          <input type="search" placeholder="Rechercher">
+                        </form>
+                      </div>
                       <li><a  href="#" title="Dashboard" data-id="dash-sub"><i class="entypo-briefcase"></i><span> Panneaux de contrôle</span></a>  </li>
 
                       <li><a class="submenu" href="#" title="Fournisseurs" data-id="fournisseur-sub"><i class="entypo-briefcase"></i><span> Fournisseurs</span></a>
@@ -257,64 +266,77 @@
                         <ul id="produit-sub">
                           <li><a href="#" ><i class="fa fa-cubes"></i><span> Ajouter produit </span></a></li>
                           <li><a href="#"><i class="fa fa-cubes"></i><span> Voir les produits </span></a></li>
-                          <li><a href="ajout_produit_c.php" ><i class="fa fa-cubes"></i><span> Ajouter un composant produit </span></a></li>
-                          <li><a href="liste_produit_c.php"><i class="fa fa-cubes"></i><span> Voir les un composant produits </span></a></li>
-                          <li><a href="ajout_categorie.php"><i class="fa fa-cubes"></i><span> Ajouter une catégorie </span></a></li>
-                          <li><a href="liste_categories.php"><i class="fa fa-cubes"></i><span> Voir les catégories </span></a></li>
                         </ul>
                       </li>
 
-                    </ul>
-                  </div>
-                  <!--/MainMenu--> 
 
-                  <!--Content Wrapper-->
-                  <div class="content-wrapper"> 
+                      <li><a class="submenu" href="#" title="Produits" data-id="compo-sub"><i class="entypo-briefcase"></i><span> Compositions produits</span></a>
+                        <ul id="compo-sub">
+                         <li><a href="ajout_produit_c.php" ><i class="fa fa-cubes"></i><span> Ajouter un composant produit </span></a></li>
+                         <li><a href="liste_produit_c.php"><i class="fa fa-cubes"></i><span> Voir les un composant produits </span></a></li>
+                       </ul>
+                     </li>
 
-                    <!--Horisontal Dropdown-->
-                    <nav class="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
-                      <div class="cbp-hsinner">
-                        <ul class="cbp-hsmenu">
-                          <li> <a href="#"><span class="icon-bar"></span></a>
-                            <ul class="cbp-hssubmenu">
-                              <li><a href="#">
-                                <div class="sparkle-dropdown"><span class="inlinebar">10,8,8,7,8,9,7,8,10,9,7,5</span>
-                                  <p class="sparkle-name">project income</p>
-                                  <p class="sparkle-amount">$23989 <i class="fa fa-chevron-circle-up"></i></p>
-                                </div>
-                              </a></li>
-                              <li><a href="#">
-                                <div class="sparkle-dropdown"><span class="linechart">5,6,7,9,9,5,3,2,9,4,6,7</span>
-                                  <p class="sparkle-name">site traffic</p>
-                                  <p class="sparkle-amount">122541 <i class="fa fa-chevron-circle-down"></i></p>
-                                </div>
-                              </a></li>
-                              <li><a href="#">
-                                <div class="sparkle-dropdown"><span class="simpleline">9,6,7,9,3,5,7,2,1,8,6,7</span>
-                                  <p class="sparkle-name">Processes</p>
-                                  <p class="sparkle-amount">890 <i class="fa fa-plus-circle"></i></p>
-                                </div>
-                              </a></li>
-                              <li><a href="#">
-                                <div class="sparkle-dropdown"><span class="inlinebar">10,8,8,7,8,9,7,8,10,9,7,5</span>
-                                  <p class="sparkle-name">orders</p>
-                                  <p class="sparkle-amount">$23989 <i class="fa fa-chevron-circle-up"></i></p>
-                                </div>
-                              </a></li>
-                              <li><a href="#">
-                                <div class="sparkle-dropdown"><span class="piechart">1,2,3</span>
-                                  <p class="sparkle-name">active/new</p>
-                                  <p class="sparkle-amount">500/200 <i class="fa fa-chevron-circle-up"></i></p>
-                                </div>
-                              </a></li>
-                              <li><a href="#">
-                                <div class="sparkle-dropdown"><span class="stackedbar">3:6,2:8,8:4,5:8,3:6,9:4,8:1,5:7,4:8,9:5,3:5</span>
-                                  <p class="sparkle-name">fault/success</p>
-                                  <p class="sparkle-amount">$23989 <i class="fa fa-chevron-circle-up"></i></p>
-                                </div>
-                              </a></li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </nav>
+
+
+                     <li><a class="submenu" href="#" title="Produits" data-id="categorie-sub"><i class="entypo-briefcase"></i><span> Catégories</span></a>
+                      <ul id="categorie-sub">
+                        <li><a href="ajout_categorie.php"><i class="fa fa-cubes"></i><span> Ajouter une catégorie </span></a></li>
+                        <li><a href="liste_categories.php"><i class="fa fa-cubes"></i><span> Voir les catégories </span></a></li>
+                      </ul>
+                    </li>
+
+                  </ul>
+                </div>
+                <!--/MainMenu--> 
+
+                <!--Content Wrapper-->
+                <div class="content-wrapper"> 
+
+                  <!--Horisontal Dropdown-->
+                  <nav class="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
+                    <div class="cbp-hsinner">
+                      <ul class="cbp-hsmenu">
+                        <li> <a href="#"><span class="icon-bar"></span></a>
+                          <ul class="cbp-hssubmenu">
+                            <li><a href="#">
+                              <div class="sparkle-dropdown"><span class="inlinebar">10,8,8,7,8,9,7,8,10,9,7,5</span>
+                                <p class="sparkle-name">project income</p>
+                                <p class="sparkle-amount">$23989 <i class="fa fa-chevron-circle-up"></i></p>
+                              </div>
+                            </a></li>
+                            <li><a href="#">
+                              <div class="sparkle-dropdown"><span class="linechart">5,6,7,9,9,5,3,2,9,4,6,7</span>
+                                <p class="sparkle-name">site traffic</p>
+                                <p class="sparkle-amount">122541 <i class="fa fa-chevron-circle-down"></i></p>
+                              </div>
+                            </a></li>
+                            <li><a href="#">
+                              <div class="sparkle-dropdown"><span class="simpleline">9,6,7,9,3,5,7,2,1,8,6,7</span>
+                                <p class="sparkle-name">Processes</p>
+                                <p class="sparkle-amount">890 <i class="fa fa-plus-circle"></i></p>
+                              </div>
+                            </a></li>
+                            <li><a href="#">
+                              <div class="sparkle-dropdown"><span class="inlinebar">10,8,8,7,8,9,7,8,10,9,7,5</span>
+                                <p class="sparkle-name">orders</p>
+                                <p class="sparkle-amount">$23989 <i class="fa fa-chevron-circle-up"></i></p>
+                              </div>
+                            </a></li>
+                            <li><a href="#">
+                              <div class="sparkle-dropdown"><span class="piechart">1,2,3</span>
+                                <p class="sparkle-name">active/new</p>
+                                <p class="sparkle-amount">500/200 <i class="fa fa-chevron-circle-up"></i></p>
+                              </div>
+                            </a></li>
+                            <li><a href="#">
+                              <div class="sparkle-dropdown"><span class="stackedbar">3:6,2:8,8:4,5:8,3:6,9:4,8:1,5:7,4:8,9:5,3:5</span>
+                                <p class="sparkle-name">fault/success</p>
+                                <p class="sparkle-amount">$23989 <i class="fa fa-chevron-circle-up"></i></p>
+                              </div>
+                            </a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>

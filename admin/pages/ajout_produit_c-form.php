@@ -11,34 +11,40 @@ if (isset($_POST['send'])) {
 
     if (strlen($pc_nom) >= 2) {
 
-      $req = $bdd->prepare('SELECT * FROM produit_c WHERE pc_nom = :pc_nom AND id_membre = :id_membre');
-      $req->execute(array('pc_nom' => $pc_nom, 'id_membre' => $id_membre));
-      $donnees = $req->fetch();
-      if ($req->rowCount() > 0 ) {
+      if ($id_categorie != '') {
 
-        setFlash('Nom du composant du produit déja utilisé.', 'danger');
+        $req = $bdd->prepare('SELECT * FROM produit_c WHERE pc_nom = :pc_nom AND id_membre = :id_membre');
+        $req->execute(array('pc_nom' => $pc_nom, 'id_membre' => $id_membre));
+        $donnees = $req->fetch();
+        if ($req->rowCount() > 0 ) {
 
-      }else{
+          setFlash('Nom du composant du produit déja utilisé.', 'danger');
 
-        $categorie = $bdd->prepare('INSERT INTO produit_c(pc_nom, pc_ref, id_categorie, pc_commentaire,  id_membre, pc_date, pc_active) 
-          VALUES (:pc_nom, :pc_ref, :id_categorie, :pc_commentaire,  :id_membre, NOW(), :pc_active)');
-        $categorie->execute(array(
-          'pc_nom' => $pc_nom,
-          'id_categorie' => $id_categorie,
-          'pc_commentaire' => $pc_commentaire, 
-          'pc_ref' => $pc_ref,
-          'id_membre' => $id_membre,
-          'pc_active' => $pc_active
-          ));   
+        }else{
+
+          $categorie = $bdd->prepare('INSERT INTO produit_c(pc_nom, pc_ref, id_categorie, pc_commentaire,  id_membre, pc_date, pc_active) 
+            VALUES (:pc_nom, :pc_ref, :id_categorie, :pc_commentaire, :id_membre, NOW(), :pc_active)');
+          $categorie->execute(array(
+            'pc_nom' => $pc_nom,
+            'id_categorie' => $id_categorie,
+            'pc_commentaire' => $pc_commentaire, 
+            'pc_ref' => $pc_ref,
+            'id_membre' => $id_membre,
+            'pc_active' => $pc_active
+            ));   
 
         // HISTORIQUE INSERT DEBUT
-        historique(2, $h_page, 'Ajout du composant produit ' . $pc_nom);
+          historique(2, $h_page, 'Ajout du composant produit ' . $pc_nom);
         // HISTORIQUE INSERT FIN
 
-        setFlash('Vous avez bien ajouté <strong>' . $pc_nom . '</strong> comme nouveau composant produit.');
-        header('Location:ajout_produit_c.php');
-        die();
-      }
+          setFlash('Vous avez bien ajouté <strong>' . $pc_nom . '</strong> comme nouveau composant produit.');
+          header('Location:ajout_produit_c.php');
+          die();
+        }
+
+      }else{
+        setFlash('Attention vous devez enregistrer une <a href="ajout_categorie.php">catégorie</a>', 'danger');
+      } 
 
     }else{
       setFlash('Attention il y à moins de 2 caractères', 'danger');
